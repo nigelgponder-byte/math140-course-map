@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Path 1 · The balance</title>
-<style>html,body{margin:0;height:100%;background:#0A0A0A;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
+<style>html,body{margin:0;height:100%;background:#0B1B3B;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
 </head><body><canvas aria-label="Animation: a balance scale shows x + 3 = 7; take 3 from both sides, so x = 4"></canvas>
 <script>
 window.SCENE = {
@@ -23,7 +23,7 @@ draw(t){
   label("x + 3 − 3 = 7 − 3",640,190,fade(t,8,8.6,11.6,12),C.cyan,'italic 700 52px "Times New Roman", serif');
   label("x = 4",640,190,prog(t,12.2,13),C.pink,'italic 700 60px "Times New Roman", serif');
   label("still level ✓",640,580,fade(t,10.6,11,15,15.5),C.cyan,`700 24px ${SANS}`);
-  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(10,10,10,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
+  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(11,27,59,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
 }
 };
 </script>

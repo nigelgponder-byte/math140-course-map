@@ -172,7 +172,7 @@ function appendMessage(role, content) {
 
   const senderEl = document.createElement("span");
   senderEl.className = "sender";
-  senderEl.textContent = role === "user" ? "You" : "MATH-140 SLM";
+  senderEl.textContent = role === "user" ? "You" : "Hint";
 
   const contentEl = document.createElement("div");
   contentEl.className = "msg-content";

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Path 2 · The shortcut</title>
-<style>html,body{margin:0;height:100%;background:#0A0A0A;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
+<style>html,body{margin:0;height:100%;background:#0B1B3B;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
 </head><body><canvas aria-label="Animation: walk 3 right and 4 up; squares of 9 and 16 make 25, so the shortcut is 5"></canvas>
 <script>
 window.SCENE = {
@@ -26,7 +26,7 @@ draw(t){
   poly([A,Cc,[Cc[0]+nx,Cc[1]+ny],[A[0]+nx,A[1]+ny]],s3,C.blue,"rgba(79,123,255,.18)",3); label("25",(A[0]+Cc[0]+nx)/2+0,(A[1]+Cc[1]+ny)/2,s3,C.ink,`800 34px ${SANS}`);
   label("9 + 16 = 25",900,170,prog(t,12,12.8),C.ink,'italic 700 40px "Times New Roman", serif');
   label("5 × 5 = 25 → 5",900,230,prog(t,12.8,13.6),C.pink,'italic 700 40px "Times New Roman", serif');
-  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(10,10,10,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
+  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(11,27,59,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
 }
 };
 </script>

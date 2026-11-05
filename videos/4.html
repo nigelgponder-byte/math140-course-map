@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Path 4 · The arch</title>
-<style>html,body{margin:0;height:100%;background:#0A0A0A;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
+<style>html,body{margin:0;height:100%;background:#0B1B3B;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
 </head><body><canvas aria-label="Animation: a thrown ball makes an arch, a parabola; it is the same on both sides; height = 9 minus x times x"></canvas>
 <script>
 window.SCENE = {
@@ -23,7 +23,7 @@ draw(t){
   const q=prog(t,12,13); const r=P(3), l=P(-3); dot(r[0],r[1],q,C.pink,12); dot(l[0],l[1],q,C.pink,12);
   label("x = −3",l[0],l[1]+32,q,C.ink,`700 22px ${SANS}`); label("x = 3",r[0],r[1]+32,q,C.ink,`700 22px ${SANS}`);
   label("height = 9 − x × x",960,200,prog(t,12.4,13.2),C.ink,'italic 700 34px "Times New Roman", serif');
-  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(10,10,10,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
+  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(11,27,59,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
 }
 };
 </script>

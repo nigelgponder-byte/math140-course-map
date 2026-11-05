@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MATH 140 Proof Map</title>
 <script>(function(){var m="simple";try{m=localStorage.getItem("m140-mode")||m}catch(e){}var h=location.hash.slice(1);if(h==="full"||h==="simple")m=h;document.documentElement.dataset.mode=m})();</script>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/garden.css">
 <style>
 *{box-sizing:border-box}
 body{margin:0;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;padding-inline:clamp(16px,4vw,48px);padding-block:28px 64px}
 .wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
 h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:balance;margin:0;letter-spacing:-.025em}
-h1{font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1.08;color:var(--ink);margin-top:6px}
+h1{font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-.015em;line-height:1.08;color:var(--ink);margin-top:6px}
 h2{font-size:clamp(22px,2.4vw,30px);font-weight:600}
 h3{font-size:20px;font-weight:600}
 p{margin:0}
@@ -169,7 +170,7 @@ html[data-mode="simple"] .m-f,html[data-mode="full"] .m-s{display:none!important
 
   <nav class="topnav" aria-label="Site">
     <div class="nav-left">
-      <a class="brand" href="./"><span class="brand-logo">📐</span><span class="brand-title">MATH-140 <span class="brand-sub">MAP</span></span></a>
+      <a class="brand" href="./"><svg class="brand-mark" viewBox="0 0 64 48" aria-hidden="true"><ellipse cx="18" cy="40" rx="16" ry="5"/><ellipse cx="30" cy="29.5" rx="12" ry="4"/><ellipse cx="40" cy="21" rx="8" ry="2.8"/><ellipse cx="47" cy="14" rx="5" ry="1.8"/><path class="brand-spark" d="M56 0c.9 5 2.6 6.7 7.6 7.6-5 .9-6.7 2.6-7.6 7.6-.9-5-2.6-6.7-7.6-7.6 5-.9 6.7-2.6 7.6-7.6Z"/></svg><span class="brand-title">Stepping Stone</span><span class="brand-sub">Course Map</span></a>
       <span class="badge-status"><span class="dot-pulse"></span>Proof Garden · Course Map</span>
     </div>
     <div class="navlinks">
@@ -592,8 +593,8 @@ function drawMap(){
   const S=mode()==="simple";
   LAYERS.forEach(g=>{while(g.firstChild)g.removeChild(g.firstChild)});
   [[130,170,150],[610,170,170],[370,450,160],[850,450,150],[1080,170,160]].forEach(([cx,cy,rr])=>el("circle",{cx,cy,r:rr,fill:"none",stroke:"var(--rule)","stroke-width":1,"stroke-dasharray":"2 5"},arcs));
-  el("text",{x:18,y:676,"font-family":"Geist, sans-serif","font-size":11,fill:"var(--muted)"},arcs).textContent=S?"START: WHAT TO LEARN →":"LEARNING GOAL →";
-  el("text",{x:1182,y:676,"text-anchor":"end","font-family":"Geist, sans-serif","font-size":11,fill:"var(--muted)"},arcs).textContent=S?"→ FINISH: THE QUIZ":"→ ASSESSMENT";
+  el("text",{x:18,y:676,"font-family":"Inter, sans-serif","font-size":11,fill:"var(--muted)"},arcs).textContent=S?"START: WHAT TO LEARN →":"LEARNING GOAL →";
+  el("text",{x:1182,y:676,"text-anchor":"end","font-family":"Inter, sans-serif","font-size":11,fill:"var(--muted)"},arcs).textContent=S?"→ FINISH: THE QUIZ":"→ ASSESSMENT";
   el("path",{d:"M30,320 "+R.map(r=>`L${r.x},${r.y}`).join(" ")+" L1190,320",fill:"none",stroke:"var(--ink)","stroke-width":1.5,"stroke-dasharray":"1 6","stroke-linecap":"round"},LT);
   R.forEach(r=>{
     const k=K[r.n],title=S?k.title:r.title,sub=S?k.sub:r.sub,out=S?k.out:r.out;
@@ -602,9 +603,9 @@ function drawMap(){
     el("path",{d,class:"shape",fill:`var(--f${r.n})`},g);
     if(r.shape==="golden"){const h=136,w=h*1.618;el("path",{d:`M${r.x-w/2+h},${r.y-h/2} V${r.y+h/2} M${r.x-w/2},${r.y+h/2} A${h},${h} 0 0,1 ${r.x-w/2+h},${r.y-h/2}`,fill:"none",stroke:"var(--muted)","stroke-width":1,"stroke-dasharray":"3 3"},g)}
     const ty=r.shape==="triangle"?r.y+14:r.y;
-    el("text",{x:r.x,y:ty-30,"text-anchor":"middle","font-family":"Geist, sans-serif","font-size":11,fill:"var(--muted)"},g).textContent=`STEP ${r.n}`;
+    el("text",{x:r.x,y:ty-30,"text-anchor":"middle","font-family":"Inter, sans-serif","font-size":11,fill:"var(--muted)"},g).textContent=`STEP ${r.n}`;
     el("text",{x:r.x,y:ty-58,"text-anchor":"middle","font-size":26},g).textContent=["🌱","🌿","💧","🌸","🍓"][r.n-1];
-    el("text",{x:r.x,y:ty-4,"text-anchor":"middle","font-size":26,"font-weight":600,"font-family":"Geist, sans-serif",fill:"var(--ink)"},g).textContent=title;
+    el("text",{x:r.x,y:ty-4,"text-anchor":"middle","font-size":28,"font-weight":700,"font-family":"Playfair Display, Georgia, serif",fill:"var(--ink)"},g).textContent=title;
     el("text",{x:r.x,y:ty+14,"text-anchor":"middle","font-size":12,fill:"var(--muted)"},g).textContent=sub;
     const w=Math.min(170,out.length*6.4+16);
     el("rect",{x:r.x-w/2,y:ty+24,width:w,height:22,rx:3,fill:"var(--paper)",stroke:"var(--ink)","stroke-width":1},g);
@@ -621,7 +622,7 @@ function drawMap(){
     const py=r.y+(r.shape==="golden"?92:112);
     r.people.forEach(([id],i)=>{const px=r.x-(r.people.length-1)*18+i*36,nv=P[id].nv;
       el("circle",{cx:px,cy:py,r:15,fill:"var(--paper)",stroke:nv?"var(--muted)":"var(--ink)","stroke-width":1.5,"stroke-dasharray":nv?"3 3":"none"},LP);
-      el("text",{x:px,y:py+4,"text-anchor":"middle","font-family":"Geist, sans-serif","font-size":10,"font-weight":600,fill:nv?"var(--muted)":"var(--ink)"},LP).textContent=id;});
+      el("text",{x:px,y:py+4,"text-anchor":"middle","font-family":"Inter, sans-serif","font-size":10,"font-weight":600,fill:nv?"var(--muted)":"var(--ink)"},LP).textContent=id;});
     const dy=py+26;
     el("rect",{x:r.x-60,y:dy,width:14,height:14,fill:"var(--ink)"},LD);
     el("text",{x:r.x-40,y:dy+11,"font-size":12,"font-weight":700,fill:"var(--ink)"},LD).textContent=S?KP[r.formal[0]]:short(r.formal[0]);

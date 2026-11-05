@@ -1,44 +1,45 @@
-/* 🌸 Proof Garden: shared look for every page, matched to shadcn/ui (neutral base, Vega style).
-   These pages don't load Basecoat (its reset would undo their layouts), so the shadcn tokens are copied here.
-   Palette: white, neutral grays, one blue accent for AI and red for no-AI zones. Fonts: Geist + Geist Mono. */
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap");
+/* 🌸 Proof Garden: shared look for every page, in the Stepping Stone brand on shadcn/ui tokens.
+   These pages don't load Basecoat (its reset would undo their layouts), so the tokens are copied here.
+   Palette: Midnight Navy, Stepping Blue, Slate, Stone, Ivory, with red for no-AI zones.
+   Fonts: Playfair Display (headings) + Inter (reading). */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap");
 
 :root{
   color-scheme: light;
   /* shadcn/ui tokens */
-  --background:oklch(1 0 0); --foreground:oklch(0.145 0 0);
-  --primary:oklch(0.205 0 0); --primary-foreground:oklch(0.985 0 0);
-  --secondary:oklch(0.97 0 0); --muted-foreground:oklch(0.556 0 0);
-  --border:oklch(0.922 0 0); --ring:oklch(0.708 0 0); --destructive:oklch(0.577 0.245 27.325);
+  --background:#FAFAF8; --foreground:#0B1B3B;
+  --primary:#0B1B3B; --primary-foreground:#FAFAF8;
+  --secondary:#F1F3F6; --muted-foreground:#64748B;
+  --border:#E5E7EB; --ring:#3B82F6; --destructive:oklch(0.577 0.245 27.325);
   /* the Proof Garden names, pointed at them */
   --white:#FFFFFF;
   --bg:var(--background); --subtle:var(--secondary);
-  --ground:var(--background); --paper:var(--background);
+  --ground:#FFFFFF; --paper:#FFFFFF;
   --ink:var(--foreground);
   --muted:var(--muted-foreground);
-  --rule:var(--border); --grid:oklch(0.97 0 0);
+  --rule:var(--border); --grid:#EEF1F5;
   --highlight:var(--secondary);
   --pink:var(--primary); --pink-deep:var(--destructive); --pink-soft:#FEF2F2; --pink-mist:#FEF2F2;
-  --blue:#2563EB; --blue-deep:#1D4ED8; --blue-soft:#EFF6FF;
-  --cyan:#3B82F6; --cyan-text:#2563EB; --cyan-soft:#EFF6FF;
+  --blue:#3B82F6; --blue-deep:#2563EB; --blue-soft:#EAF1FE;
+  --cyan:#3B82F6; --cyan-text:#2563EB; --cyan-soft:#EAF1FE;
   /* meanings on the map */
   --ai:var(--cyan-text); --ai-soft:var(--cyan-soft);          /* 💧 AI = blue */
   --stop:var(--destructive); --stop-soft:var(--pink-soft);     /* 🚫 no-AI zone = red */
   --human:var(--primary); --human-soft:var(--secondary);       /* 🧑‍🌾 a person decides */
   --hand:var(--ink);                                           /* ➜ a person checks the AI */
   /* stop fills: seed, sprout, water, bloom, fruit */
-  --f1:#FAFAFA; --f2:#FAFAFA; --f3:#EFF6FF; --f4:#FAFAFA; --f5:#F5F5F5;
-  --display:"Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --body:var(--display);
-  --mono:"Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --radius:0.625rem; --radius-sm:calc(var(--radius) - 4px);
+  --f1:#FFFFFF; --f2:#FFFFFF; --f3:#EAF1FE; --f4:#FFFFFF; --f5:#F1F3F6;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius:0.75rem; --radius-sm:calc(var(--radius) - 4px);
   --shadow:0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
   --shadow-lg:0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
   --ease:.15s ease;
 }
 body{background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.025em}
-h1{font-weight:700;letter-spacing:-.04em}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.01em}
+h1{font-weight:700;letter-spacing:-.015em}
 ::selection{background:var(--secondary);color:var(--ink)}
 a{color:var(--ink);text-underline-offset:3px}
 .highlight{color:var(--muted)}
@@ -48,7 +49,9 @@ a{color:var(--ink);text-underline-offset:3px}
 .nav-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .brand{display:inline-flex;gap:8px;align-items:center;color:var(--ink);text-decoration:none}
 .brand-logo{font-size:24px}
-.brand-title{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.04em;line-height:1}
+.brand-title{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;line-height:1}
+.brand-mark{width:36px;height:27px;fill:var(--ink);flex:none}
+.brand-mark .brand-spark{fill:var(--blue)}
 .brand-sub{font:500 12px var(--body);background:var(--primary);color:var(--primary-foreground);padding:2px 8px;border-radius:var(--radius-sm);vertical-align:middle;letter-spacing:0}
 /* shadcn badge (outline) */
 .badge-status{font:500 12px var(--body);padding:2px 8px;border-radius:var(--radius-sm);border:1px solid var(--rule);background:transparent;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
@@ -83,7 +86,7 @@ a{color:var(--ink);text-underline-offset:3px}
 .vtabs button{font:500 13px var(--body);border:1px solid transparent;background:transparent;color:var(--muted);border-radius:var(--radius-sm);padding:4px 10px;cursor:pointer;transition:all var(--ease)}
 .vtabs button:hover{color:var(--ink)}
 .vtabs button[aria-selected="true"]{background:var(--background);color:var(--ink);box-shadow:var(--shadow)}
-.vframe{width:100%;aspect-ratio:16/9;border:0;border-radius:var(--radius);background:#0A0A0A;display:block}
+.vframe{width:100%;aspect-ratio:16/9;border:0;border-radius:var(--radius);background:#0B1B3B;display:block}
 .vsay{font:400 14px/1.5 var(--body);color:var(--muted);margin:0}
 .vfoot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 /* shadcn buttons: .vbtn = secondary, .ghost = outline, .pink = primary */

@@ -1,7 +1,7 @@
 // Path video engine (copied from math140-course-map/explainers): every frame is drawn in code. draw(frame) is a pure function of the frame number.
 // Style: dark canvas, smooth constructions, pink / blue / cyan accents (a 3Blue1Brown-style look).
 const W = 1280, H = 720, FPS = 30;
-const C = { bg:"#0A0A0A", ink:"#FAFAFA", dim:"#A1A1A1", pink:"#F5F5F5", blue:"#3B82F6", cyan:"#60A5FA", grid:"rgba(255,255,255,0.05)" };
+const C = { bg:"#0B1B3B", ink:"#FAFAF8", dim:"#94A3B8", pink:"#FAFAF8", blue:"#3B82F6", cyan:"#7DB2FA", grid:"rgba(255,255,255,0.05)" };
 const SERIF = 'italic 600 30px "Times New Roman", Times, serif';
 const SANS = '"Avenir Next", "Helvetica Neue", Arial, sans-serif';
 

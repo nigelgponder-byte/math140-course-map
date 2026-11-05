@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Path 3 · The growing plant</title>
-<style>html,body{margin:0;height:100%;background:#0A0A0A;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
+<style>html,body{margin:0;height:100%;background:#0B1B3B;display:grid;place-items:center}canvas{display:block;width:100%;height:auto;max-height:100vh;aspect-ratio:16/9;cursor:pointer}</style>
 </head><body><canvas aria-label="Animation: a plant starts at 2 cm and grows 3 cm each week; the tops make a straight line; week 4 is 14 cm"></canvas>
 <script>
 window.SCENE = {
@@ -22,7 +22,7 @@ draw(t){
   const L=prog(t,8.2,10); line(O[0]+60,O[1]-2*sy,O[0]+60+4*sx*L,O[1]-(2+12*L)*sy,L>0?1:0,C.blue,5);
   label("height = 3 × weeks + 2",580,165,prog(t,10.4,11.2),C.ink,'italic 700 34px "Times New Roman", serif');
   label("3 × 4 + 2 = 14",580,215,prog(t,12.2,13),C.pink,'italic 700 38px "Times New Roman", serif');
-  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(10,10,10,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
+  const w=prog(t,16.2,17); if(w>0){g.fillStyle=`rgba(11,27,59,${0.78*w})`;g.fillRect(0,0,W,H);} box(330,290,620,80,40,"#0E1430",C.pink,w,3); label("✏️  Your turn: write the reasons",640,330,w,C.ink,`700 30px ${SANS}`);
 }
 };
 </script>

@@ -16,7 +16,7 @@ addEventListener("keydown", (e) => { if (e.key === "Escape") setSidebar(false); 
 // The top bar names the page that is open.
 function showTitle() {
   const active = document.querySelector(".nav-btn.active span");
-  $("topbar-title").textContent = active ? active.textContent : "Proof Check";
+  $("topbar-title").textContent = active ? active.textContent : "Home";
 }
 
 // Every page change: new title, back to the top, menu closed.
@@ -34,6 +34,9 @@ document.querySelectorAll(".app-sidebar .path-pill").forEach((pill) => pill.addE
   if (!$("section-tutor").classList.contains("active")) window.switchTab("tutor");
   setSidebar(false);
 }));
+
+// Settings is the welcome screen again: nickname and reward world (app.js opens it from the world button).
+$("open-settings").addEventListener("click", () => { setSidebar(false); $("world-chip").click(); });
 
 // New messages (and the hint typing out) keep the newest line in view.
 new MutationObserver(() => { toolScroll.scrollTop = toolScroll.scrollHeight; })

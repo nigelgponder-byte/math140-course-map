@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>MATH 140 SLM | Ethical Geometry Study Tool & Planner</title>
-  <meta name="description" content="College math study tool and ethical SLM assistant for SCAD MATH 140: The Geometry of Physical Space. Socratic proof hints, calendar planner, and whole-course review.">
+  <title>Stepping Stone · Your Math 140 Course Companion</title>
+  <meta name="description" content="Stepping Stone is an AI-assisted course companion for SCAD MATH 140: The Geometry of Physical Space. It guides you through proofs one step at a time, with hints only.">
+  <meta name="theme-color" content="#0B1B3B">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <!-- shadcn/ui components as plain HTML + CSS: Basecoat (MIT), https://basecoatui.com -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.0.2/dist/basecoat.cdn.min.css">
   <link rel="stylesheet" href="styles.css">
@@ -18,9 +20,13 @@
     <!-- Sidebar: the tool and its practice paths first, the course pages after. -->
     <aside id="sidebar" class="app-sidebar" aria-label="App navigation">
       <div class="sidebar-head">
-        <a href="#tutor" class="brand-link" onclick="switchTab('tutor')">
-          <span class="brand-logo">📐</span>
-          <span class="brand-title">MATH-140 <span class="brand-sub">SLM</span></span>
+        <a href="#tutor" class="brand-link" onclick="switchTab('tutor')" aria-label="Stepping Stone home">
+          <svg class="brand-mark" viewBox="0 0 64 48" aria-hidden="true">
+            <ellipse cx="18" cy="40" rx="16" ry="5"/><ellipse cx="30" cy="29.5" rx="12" ry="4"/>
+            <ellipse cx="40" cy="21" rx="8" ry="2.8"/><ellipse cx="47" cy="14" rx="5" ry="1.8"/>
+            <path class="brand-spark" d="M56 0c.9 5 2.6 6.7 7.6 7.6-5 .9-6.7 2.6-7.6 7.6-.9-5-2.6-6.7-7.6-7.6 5-.9 6.7-2.6 7.6-7.6Z"/>
+          </svg>
+          <span class="brand-words"><span class="brand-name">Stepping Stone</span><span class="brand-tag">Math 140 Course Companion</span></span>
         </a>
         <button type="button" class="btn sidebar-close" data-variant="ghost" data-size="icon-sm" data-close-sidebar aria-label="Close menu">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -30,8 +36,8 @@
       <nav class="sidebar-nav">
         <div class="sidebar-group">
           <button class="nav-btn sidebar-item active" data-tab="tutor">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span>Proof Check</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+            <span>Home</span>
           </button>
         </div>
 
@@ -73,6 +79,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
             <span>CLI &amp; Embed</span>
           </button>
+          <button type="button" class="sidebar-item" id="open-settings" title="Your nickname and reward world">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+            <span>Settings</span>
+          </button>
         </div>
       </nav>
 
@@ -80,7 +90,7 @@
         <button type="button" class="btn world-chip" data-variant="outline" data-size="sm" id="world-chip" title="Change your world"><span id="world-name">Pick your world</span></button>
         <div class="sidebar-meta">
           <span class="dot-pulse"></span>
-          <span>Stop 3 tutor · hints only</span>
+          <span>Hint-only tutor · Stop 3</span>
           <a href="https://github.com/nigelgponder-byte/math140-course-map" target="_blank" rel="noopener noreferrer" class="btn" data-variant="ghost" data-size="icon-sm" title="View source on GitHub" aria-label="View source on GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
@@ -95,7 +105,7 @@
         <button type="button" class="btn sidebar-open" data-variant="ghost" data-size="icon-sm" id="sidebar-open" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
-        <h1 class="topbar-title" id="topbar-title">Proof Check</h1>
+        <h1 class="topbar-title" id="topbar-title">Home</h1>
         <span class="badge topbar-badge" data-variant="outline">SCAD MATH 140</span>
       </header>
 
@@ -106,10 +116,30 @@
       <section id="section-tutor" class="tab-pane active tool-pane">
         <div id="chat-box" class="tool">
           <div class="tool-bar">
-            <div class="tool-bar-title">
-              <span class="badge" data-variant="secondary">Stop 3 · hint only</span>
-              <span class="tool-bar-sub">Points to the first weak step. Never writes the proof.</span>
-            </div>
+            <!-- The 5 stops of the unit. This tool is Stop 3, the only place AI is allowed. -->
+            <ol class="stepper" aria-label="The 5-step process">
+              <li title="Draw it by hand with a compass. No AI.">
+                <span class="step-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></span>
+                <span class="step-name">Draw</span>
+              </li>
+              <li title="Write your own proof. No AI.">
+                <span class="step-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M16 13H8M16 17H8M10 9H8"/></svg></span>
+                <span class="step-name">Write</span>
+              </li>
+              <li class="current" aria-current="step" title="One hint on a proof you already wrote. The only AI step.">
+                <span class="step-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M12 2c.8 6.5 3.5 9.2 10 10-6.5.8-9.2 3.5-10 10-.8-6.5-3.5-9.2-10-10 6.5-.8 9.2-3.5 10-10Z"/></svg></span>
+                <span class="step-name">Hint</span>
+              </li>
+              <li title="Explain it out loud at the board. No AI.">
+                <span class="step-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></svg></span>
+                <span class="step-name">Explain</span>
+              </li>
+              <li title="The quiz. No computers. The teacher grades.">
+                <span class="step-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span class="step-name">Quiz</span>
+              </li>
+            </ol>
+            <p class="stepper-note">AI is here — and only here.</p>
             <div class="workbench-controls">
               <label class="mode-toggle">
                 <input type="checkbox" class="input" role="switch" id="toggle-gateway" checked>
@@ -124,15 +154,20 @@
 
           <!-- Shown until the first message: what the tool does, and the 4 practice paths. -->
           <div class="tool-empty">
-            <h2>Check your proof</h2>
-            <p>Write a draft with at least 2 numbered steps, each with a reason. The helper points to the first weak reason and asks you one question. It never writes the proof or gives the answer.</p>
-            <span class="tool-empty-label">Or start with a practice question · Weeks 1–2</span>
+            <h2>Think Deeper.<br><span>Prove Stronger.</span></h2>
+            <p>Write a draft with at least 2 numbered steps, each with a reason. Stepping Stone points to the first weak step and asks you one question, so you work through the proof one step at a time. It never writes the proof or gives the answer.</p>
+            <span class="tool-empty-label">Take the next step · practice questions for Weeks 1–2</span>
             <div class="starter-grid">
               <button type="button" class="starter-card path-pill" data-path="1"><span class="starter-kicker">Path 1 · The Balance</span><span class="starter-title">How many apples are in the box?</span></button>
               <button type="button" class="starter-card path-pill" data-path="2"><span class="starter-kicker">Path 2 · The Shortcut</span><span class="starter-title">How long is the shortcut?</span></button>
               <button type="button" class="starter-card path-pill" data-path="3"><span class="starter-kicker">Path 3 · The Growing Line</span><span class="starter-title">How tall will the plant be?</span></button>
               <button type="button" class="starter-card path-pill" data-path="4"><span class="starter-kicker">Path 4 · The Arch</span><span class="starter-title">What shape does a thrown ball make?</span></button>
             </div>
+            <ul class="trust-row" aria-label="Principles">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Responsible AI Design</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M3 7h18M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg>Academic Integrity First</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Built for MATH 140</li>
+            </ul>
           </div>
 
           <!-- Guided path: 1 Watch → 2 Answer → 3 Write -->
