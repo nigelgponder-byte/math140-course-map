@@ -13,116 +13,126 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
-  <div id="app" class="app-container">
+  <div id="app" class="app-shell">
 
-    <!-- Top Navigation Header -->
-    <header class="app-header">
-      <div class="header-left">
-        <a href="#tutor" class="brand-link">
+    <!-- Sidebar: the tool and its practice paths first, the course pages after. -->
+    <aside id="sidebar" class="app-sidebar" aria-label="App navigation">
+      <div class="sidebar-head">
+        <a href="#tutor" class="brand-link" onclick="switchTab('tutor')">
           <span class="brand-logo">📐</span>
           <span class="brand-title">MATH-140 <span class="brand-sub">SLM</span></span>
         </a>
-        <span class="badge badge-status" data-variant="outline">
-          <span class="dot-pulse"></span>
-          STOP 3 ETHICAL TUTOR
-        </span>
-      </div>
-
-      <nav class="nav-links">
-        <button class="btn nav-btn active" data-variant="ghost" data-size="sm" data-tab="tutor">Tutor (SLM)</button>
-        <button class="btn nav-btn" data-variant="ghost" data-size="sm" data-tab="calendar">Calendar Planner</button>
-        <button class="btn nav-btn" data-variant="ghost" data-size="sm" data-tab="syllabus">Course Syllabus</button>
-        <button class="btn nav-btn" data-variant="ghost" data-size="sm" data-tab="coursemap">Course Map & Governance</button>
-        <button class="btn nav-btn" data-variant="ghost" data-size="sm" data-tab="keys">8 Keys & Account</button>
-        <button class="btn nav-btn" data-variant="ghost" data-size="sm" data-tab="embed">CLI & Embed</button>
-        <button class="btn nav-btn" data-variant="ghost" data-size="sm" data-tab="teacher">Teacher</button>
-      </nav>
-
-      <div class="header-right">
-        <button type="button" class="btn" data-variant="outline" data-size="sm" onclick="switchTab('coursemap')" title="Open Course Map and Governance tab">
-          <span>Course Map & Governance</span>
-          <span class="arrow-ext">→</span>
+        <button type="button" class="btn sidebar-close" data-variant="ghost" data-size="icon-sm" data-close-sidebar aria-label="Close menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
-        <a href="https://github.com/nigelgponder-byte/math140-course-map" target="_blank" rel="noopener noreferrer" class="btn" data-variant="ghost" data-size="icon" title="View Source GitHub Repository">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
       </div>
-    </header>
 
-    <!-- Main Content Area -->
-    <main class="app-main">
-
-      <!-- ================= SECTION 1: TUTOR (SLM) ================= -->
-      <section id="section-tutor" class="tab-pane active">
-        <!-- Goody-2 Style Hero Showcase -->
-        <div class="hero-split">
-          <div class="hero-left">
-            <span class="eyebrow">SCAD MATH 140 · Socratic SLM</span>
-            <h1 class="hero-title">
-              The college math helper <br>
-              <span class="highlight">ethically engineered</span> <br>
-              to protect your thinking.
-            </h1>
-            <p class="hero-lead">
-              Built under the <strong>Stop 3 Touchpoint Rule</strong>. It guides with hints on drafts you’ve already written. It <span class="underline">will never</span> write a proof, solve homework, or give away answers.
-            </p>
-            <div class="hero-actions">
-              <a href="#chat-box" class="btn">Try Proof Check</a>
-              <button class="btn" data-variant="secondary" onclick="switchTab('calendar')">Study Planner</button>
-              <button class="btn" data-variant="outline" onclick="switchTab('syllabus')">10-Week Syllabus</button>
-            </div>
-          </div>
-
-          <div class="hero-right">
-            <div class="card-demo">
-              <div class="demo-header">
-                <span class="window-dot red"></span>
-                <span class="window-dot yellow"></span>
-                <span class="window-dot green"></span>
-                <span class="demo-title">ETHICAL INVARIANT INSPECTION</span>
-              </div>
-              <div class="demo-transcript">
-                <div class="msg-row user">
-                  <span class="sender">Student</span>
-                  <div class="bubble">Can you write the proof for the Isosceles Triangle Theorem for me?</div>
-                </div>
-                <div class="msg-row slm">
-                  <span class="sender">MATH-140 SLM</span>
-                  <div class="bubble typewriter-demo">
-                    I cannot write proofs or provide direct answers. Under the MATH 140 Stop 3 ethical guidelines, you must first provide an attempted proof of at least two steps.<br><br>
-                    <strong>What given properties or initial statements can you write down to begin?</strong><br><br>
-                    <em>Check this hint against your theorem list; your instructor decides what is correct.</em>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <button class="nav-btn sidebar-item active" data-tab="tutor">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Proof Check</span>
+          </button>
         </div>
 
-        <!-- Live Socratic Chat Workbench -->
-        <div id="chat-box" class="chat-workbench">
-          <div class="workbench-header">
-            <div>
-              <h2>Proof Check Socratic Workbench</h2>
-              <p class="workbench-sub">Paste your draft proof (minimum 2 steps). The SLM points to the first weak deduction and names the required theorem family.</p>
+        <div class="sidebar-group">
+          <h3 class="sidebar-label">Practice · Weeks 1–2</h3>
+          <button type="button" class="sidebar-item path-pill" data-path="1"><span class="sidebar-num">1</span><span>The Balance</span></button>
+          <button type="button" class="sidebar-item path-pill" data-path="2"><span class="sidebar-num">2</span><span>The Shortcut</span></button>
+          <button type="button" class="sidebar-item path-pill" data-path="3"><span class="sidebar-num">3</span><span>The Growing Line</span></button>
+          <button type="button" class="sidebar-item path-pill" data-path="4"><span class="sidebar-num">4</span><span>The Arch</span></button>
+        </div>
+
+        <div class="sidebar-group">
+          <h3 class="sidebar-label">Course</h3>
+          <button class="nav-btn sidebar-item" data-tab="calendar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span>Planner</span>
+          </button>
+          <button class="nav-btn sidebar-item" data-tab="syllabus">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Syllabus</span>
+          </button>
+          <button class="nav-btn sidebar-item" data-tab="coursemap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+            <span>Course Map</span>
+          </button>
+          <button class="nav-btn sidebar-item" data-tab="keys">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg>
+            <span>8 Keys</span>
+          </button>
+        </div>
+
+        <div class="sidebar-group">
+          <h3 class="sidebar-label">More</h3>
+          <button class="nav-btn sidebar-item" data-tab="teacher">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Teacher</span>
+          </button>
+          <button class="nav-btn sidebar-item" data-tab="embed">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+            <span>CLI &amp; Embed</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="sidebar-foot">
+        <button type="button" class="btn world-chip" data-variant="outline" data-size="sm" id="world-chip" title="Change your world"><span id="world-name">Pick your world</span></button>
+        <div class="sidebar-meta">
+          <span class="dot-pulse"></span>
+          <span>Stop 3 tutor · hints only</span>
+          <a href="https://github.com/nigelgponder-byte/math140-course-map" target="_blank" rel="noopener noreferrer" class="btn" data-variant="ghost" data-size="icon-sm" title="View source on GitHub" aria-label="View source on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-scrim" data-close-sidebar></div>
+
+    <div class="workspace">
+      <!-- Top bar: menu (phones), current page, tool status -->
+      <header class="topbar">
+        <button type="button" class="btn sidebar-open" data-variant="ghost" data-size="icon-sm" id="sidebar-open" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <h1 class="topbar-title" id="topbar-title">Proof Check</h1>
+        <span class="badge topbar-badge" data-variant="outline">SCAD MATH 140</span>
+      </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main" id="app-main">
+
+      <!-- ================= SECTION 1: TUTOR (SLM): the tool ================= -->
+      <section id="section-tutor" class="tab-pane active tool-pane">
+        <div id="chat-box" class="tool">
+          <div class="tool-bar">
+            <div class="tool-bar-title">
+              <span class="badge" data-variant="secondary">Stop 3 · hint only</span>
+              <span class="tool-bar-sub">Points to the first weak step. Never writes the proof.</span>
             </div>
             <div class="workbench-controls">
               <label class="mode-toggle">
                 <input type="checkbox" class="input" role="switch" id="toggle-gateway" checked>
-                <span class="toggle-label" id="gateway-status">Llama 3.3 70B (AI Gateway / Local SLM Fallback)</span>
+                <span class="toggle-label" id="gateway-status">AI Gateway</span>
               </label>
-              <button id="btn-clear-chat" class="btn" data-variant="outline" data-size="sm">Reset Chat</button>
+              <button id="btn-clear-chat" class="btn" data-variant="outline" data-size="sm">Reset chat</button>
             </div>
           </div>
 
-          <!-- Sample prompts: 4 questions a 10-year-old can answer. Each one opens a 3-step path. -->
-          <div class="pills-container">
-            <button type="button" class="btn world-chip" data-variant="outline" data-size="sm" id="world-chip" title="Change your world"><span id="world-name">Pick your world</span></button>
-            <span class="pills-label">Weeks 1–2 review · start with a question:</span>
-            <button class="btn pill-btn path-pill" data-variant="outline" data-size="sm" data-path="1">How many apples are in the box?</button>
-            <button class="btn pill-btn path-pill" data-variant="outline" data-size="sm" data-path="2">How long is the shortcut?</button>
-            <button class="btn pill-btn path-pill" data-variant="outline" data-size="sm" data-path="3">How tall will the plant be?</button>
-            <button class="btn pill-btn path-pill" data-variant="outline" data-size="sm" data-path="4">What shape does a thrown ball make?</button>
+          <div class="tool-scroll" id="tool-scroll">
+          <div class="tool-column">
+
+          <!-- Shown until the first message: what the tool does, and the 4 practice paths. -->
+          <div class="tool-empty">
+            <h2>Check your proof</h2>
+            <p>Write a draft with at least 2 numbered steps, each with a reason. The helper points to the first weak reason and asks you one question. It never writes the proof or gives the answer.</p>
+            <span class="tool-empty-label">Or start with a practice question · Weeks 1–2</span>
+            <div class="starter-grid">
+              <button type="button" class="starter-card path-pill" data-path="1"><span class="starter-kicker">Path 1 · The Balance</span><span class="starter-title">How many apples are in the box?</span></button>
+              <button type="button" class="starter-card path-pill" data-path="2"><span class="starter-kicker">Path 2 · The Shortcut</span><span class="starter-title">How long is the shortcut?</span></button>
+              <button type="button" class="starter-card path-pill" data-path="3"><span class="starter-kicker">Path 3 · The Growing Line</span><span class="starter-title">How tall will the plant be?</span></button>
+              <button type="button" class="starter-card path-pill" data-path="4"><span class="starter-kicker">Path 4 · The Arch</span><span class="starter-title">What shape does a thrown ball make?</span></button>
+            </div>
           </div>
 
           <!-- Guided path: 1 Watch → 2 Answer → 3 Write -->
@@ -157,34 +167,42 @@
             </div>
           </div>
 
-          <!-- Escalation Banner (Triggered when student clicks Not Sure / Disagree) -->
-          <div id="escalation-banner" class="escalation-banner hidden">
-            <div class="banner-body">
-              <strong>Escalated to Instructor:</strong> This hint interaction has been logged for Professor Patrick Bahls' review. The feedback loop ensures verification within 48 hours, prior to Stop 4 board presentations.
-            </div>
-            <button class="btn banner-close" data-variant="ghost" data-size="icon-sm" onclick="closeEscalation()">✕</button>
+          </div>
           </div>
 
-          <!-- Input Bar -->
-          <form id="form-chat" class="chat-form">
-            <div class="input-wrapper">
-              <textarea 
-                class="textarea"
-                id="input-proof" 
-                rows="3" 
-                placeholder="Draft your proof steps here... Example:&#10;1. In triangle ABC, AB = AC (Given)&#10;2. Point M is midpoint of BC (Construction)" 
-                required
-              ></textarea>
-              <div class="input-meta">
-                <span id="char-counter" class="char-counter">0 / 4000</span>
-                <span class="meta-tip">Shift+Enter for newline</span>
+          <!-- Composer: always at the bottom of the tool -->
+          <div class="composer">
+            <div class="tool-column">
+              <!-- Escalation Banner (Triggered when student clicks Not Sure / Disagree) -->
+              <div id="escalation-banner" class="escalation-banner hidden">
+                <div class="banner-body">
+                  <strong>Escalated to Instructor:</strong> This hint interaction has been logged for Professor Patrick Bahls' review. The feedback loop ensures verification within 48 hours, prior to Stop 4 board presentations.
+                </div>
+                <button class="btn banner-close" data-variant="ghost" data-size="icon-sm" onclick="closeEscalation()">✕</button>
               </div>
+
+              <form id="form-chat" class="chat-form">
+                <textarea
+                  class="textarea"
+                  id="input-proof"
+                  rows="3"
+                  placeholder="Draft your proof steps here... Example:&#10;1. In triangle ABC, AB = AC (Given)&#10;2. Point M is midpoint of BC (Construction)"
+                  required
+                ></textarea>
+                <div class="composer-row">
+                  <div class="input-meta">
+                    <span id="char-counter" class="char-counter">0 / 4000</span>
+                    <span class="meta-tip">Enter to check · Shift+Enter for a new line</span>
+                  </div>
+                  <button type="submit" id="btn-submit-proof" class="btn btn-send" data-size="sm">
+                    <span>Evaluate Proof</span>
+                    <span class="send-arrow">→</span>
+                  </button>
+                </div>
+              </form>
+              <p class="composer-note">Check this hint against your theorem list; your instructor decides what is correct.</p>
             </div>
-            <button type="submit" id="btn-submit-proof" class="btn btn-send">
-              <span>Evaluate Proof</span>
-              <span class="send-arrow">→</span>
-            </button>
-          </form>
+          </div>
         </div>
       </section>
 
@@ -508,24 +526,13 @@
         </div>
       </section>
 
+      <!-- Credits, at the end of every page except the tool -->
+      <footer class="app-footer">
+        <span>SCAD MATH 140 "The Geometry of Physical Space" · DIGI 230 Ethics of Emerging Technology</span>
+        <span>Designed with inspiration from <a href="https://www.goody2.ai" target="_blank" rel="noopener noreferrer">GOODY-2</a> &amp; <a href="https://github.com/morluto/rea" target="_blank" rel="noopener noreferrer">morluto/rea</a></span>
+      </footer>
     </main>
-
-    <!-- Footer -->
-    <footer class="app-footer">
-      <div class="footer-left">
-        <span>SCAD MATH 140 "The Geometry of Physical Space"</span>
-        <span class="sep">·</span>
-        <span>DIGI 230 Ethics of Emerging Technology</span>
-      </div>
-      <div class="footer-center">
-        <span>Designed with inspiration from <a href="https://www.goody2.ai" target="_blank" rel="noopener noreferrer">GOODY-2</a> & <a href="https://github.com/morluto/rea" target="_blank" rel="noopener noreferrer">morluto/rea</a></span>
-      </div>
-      <div class="footer-right">
-        <a href="javascript:void(0)" onclick="switchTab('coursemap')">Course Map Tab</a>
-        <span class="sep">·</span>
-        <a href="https://github.com/nigelgponder-byte/math140-course-map" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </footer>
+    </div>
 
   </div>
 
@@ -553,5 +560,6 @@
 
   <script type="module" src="app.js"></script>
   <script type="module" src="teacher.js"></script>
+  <script type="module" src="shell.js"></script>
 </body>
 </html>
