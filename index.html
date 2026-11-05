@@ -87,7 +87,7 @@
       </nav>
 
       <div class="sidebar-foot">
-        <button type="button" class="btn world-chip" data-variant="outline" data-size="sm" id="world-chip" title="Change your world"><span id="world-name">Pick your world</span></button>
+        <button type="button" class="btn world-chip" data-variant="outline" data-size="sm" id="world-chip" title="Change your world"><span class="wmark" id="world-mark" aria-hidden="true"></span><span id="world-name">Pick your world</span></button>
         <div class="sidebar-meta">
           <span class="dot-pulse"></span>
           <span>Hint-only tutor · Stop 3</span>
@@ -581,12 +581,12 @@
       </label>
       <p class="onboard-lead">Pick 1 world. When you finish a problem, we make you a <b>reward video</b> in that world.</p>
       <div class="onboard-grid">
-        <button type="button" class="world-tile" data-world="animals"><span>🐾</span>Animals</button>
-        <button type="button" class="world-tile" data-world="sports"><span>⚽</span>Sports</button>
-        <button type="button" class="world-tile" data-world="space"><span>🚀</span>Space</button>
-        <button type="button" class="world-tile" data-world="music"><span>🎵</span>Music</button>
-        <button type="button" class="world-tile" data-world="food"><span>🍕</span>Food</button>
-        <button type="button" class="world-tile" data-world="games"><span>🎮</span>Games</button>
+        <button type="button" class="world-tile" data-world="animals"><span class="world-icon"><span class="wmark" data-world="animals" aria-hidden="true"></span></span>Animals</button>
+        <button type="button" class="world-tile" data-world="sports"><span class="world-icon"><span class="wmark" data-world="sports" aria-hidden="true"></span></span>Sports</button>
+        <button type="button" class="world-tile" data-world="space"><span class="world-icon"><span class="wmark" data-world="space" aria-hidden="true"></span></span>Space</button>
+        <button type="button" class="world-tile" data-world="music"><span class="world-icon"><span class="wmark" data-world="music" aria-hidden="true"></span></span>Music</button>
+        <button type="button" class="world-tile" data-world="food"><span class="world-icon"><span class="wmark" data-world="food" aria-hidden="true"></span></span>Food</button>
+        <button type="button" class="world-tile" data-world="games"><span class="world-icon"><span class="wmark" data-world="games" aria-hidden="true"></span></span>Games</button>
       </div>
       <p class="onboard-note">You can change it any time with the world button. Your world stays on this device. When you check a proof, your teacher sees it with your nickname.</p>
       <button type="button" class="btn" data-variant="outline" data-size="sm" id="onboard-skip">Skip for now</button>

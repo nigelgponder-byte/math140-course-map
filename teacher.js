@@ -2,7 +2,7 @@
 // The teacher code is kept only for this browser tab (sessionStorage).
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const WORLD = { animals: "🐾", sports: "⚽", space: "🚀", music: "🎵", food: "🍕", games: "🎮" };
+const WORLD = { animals: "Animals", sports: "Sports", space: "Space", music: "Music", food: "Food", games: "Games" };
 
 let data = null, filter = "all", showDemo = false, loaded = false;
 const getPin = () => { try { return sessionStorage.getItem("m140-teacher") || ""; } catch { return ""; } };
@@ -114,7 +114,7 @@ function render() {
       return attemptHTML(tries[0]) + (older.length
         ? `<details class="t-older"><summary>Earlier tries on path ${p} (${older.length})</summary>${older.map(attemptHTML).join("")}</details>` : "");
     }).join("");
-    return `<details class="t-student"><summary>${WORLD[s.world] || ""} ${esc(s.nick)} ${badges}<span class="t-meta">${s.list.length} ${s.list.length === 1 ? "check" : "checks"} · ${ago(s.list[0].ts)}</span></summary><div class="t-body">${body}</div></details>`;
+    return `<details class="t-student"><summary>${WORLD[s.world] ? `<span class="wmark" data-world="${s.world}" title="${WORLD[s.world]} world"></span>` : ""} ${esc(s.nick)} ${badges}<span class="t-meta">${s.list.length} ${s.list.length === 1 ? "check" : "checks"} · ${ago(s.list[0].ts)}</span></summary><div class="t-body">${body}</div></details>`;
   }).join("") : `<div class="t-empty">${all.length ? "No students match this filter." : "No checked proofs yet. When a student presses Evaluate Proof on a guided path, it shows up here."}</div>`;
 
   $("teacher-key").innerHTML = Object.entries(data.key).map(([p, k]) => `

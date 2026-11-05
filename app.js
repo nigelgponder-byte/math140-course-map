@@ -339,7 +339,7 @@ function setVideoOpen(open) {
 function toggleVideo() { setVideoOpen(vidDrawer.classList.contains("hidden")); }
 
 // ---------- Worlds (onboarding) ----------
-const WORLDS = { animals: "🐾 Animals", sports: "⚽ Sports", space: "🚀 Space", music: "🎵 Music", food: "🍕 Food", games: "🎮 Games" };
+const WORLDS = { animals: "Animals", sports: "Sports", space: "Space", music: "Music", food: "Food", games: "Games" };
 let afterOnboard = null;
 function getNick() { try { return localStorage.getItem("m140-nick") || ""; } catch (e) { return ""; } }
 function saveNick() {
@@ -348,7 +348,11 @@ function saveNick() {
 }
 function getWorld() { try { return localStorage.getItem("m140-world") || ""; } catch (e) { return ""; } }
 function setWorld(w) { try { localStorage.setItem("m140-world", w); } catch (e) {} showWorld(); }
-function showWorld() { const w = getWorld(); document.getElementById("world-name").textContent = w ? WORLDS[w] : "Pick your world"; }
+function showWorld() {
+  const w = getWorld();
+  document.getElementById("world-name").textContent = w ? WORLDS[w] : "Pick your world";
+  document.getElementById("world-mark").dataset.world = w; // its line icon (styles.css)
+}
 function openOnboard(then) {
   afterOnboard = then || null;
   document.getElementById("onboard-nick").value = getNick();
