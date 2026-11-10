@@ -38,7 +38,8 @@ function initURLState() {
     document.body.classList.add("embed-mode");
   }
 
-  const hash = window.location.hash.replace("#", "");
+  let hash = window.location.hash.replace("#", "");
+  if (hash === "professor") hash = "teacher"; // old #teacher links still work too
   if (["tutor", "calendar", "syllabus", "keys", "embed", "coursemap", "teacher"].includes(hash)) {
     switchTab(hash);
   }
@@ -90,7 +91,7 @@ function setupEventListeners() {
     conversationStream.innerHTML = `
       <div class="system-notice">
         <div>
-          <strong>Stop 3 Guardrail Active:</strong> Proof drafts require at least 2 steps with statements and reasons. Replies are strictly capped under 120 words and terminate with an instructor disclaimer.
+          <strong>Step 3 Guardrail Active:</strong> Proof drafts require at least 2 steps with statements and reasons. Replies are strictly capped under 120 words and terminate with an instructor disclaimer.
         </div>
       </div>
     `;
@@ -152,7 +153,8 @@ function setupEventListeners() {
 // Tab switcher
 window.switchTab = function (tabName) {
   currentTab = tabName;
-  window.location.hash = tabName;
+  // The Professor tab is "teacher" inside the code; its address is #professor.
+  window.location.hash = tabName === "teacher" ? "professor" : tabName;
 
   navButtons.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.tab === tabName);

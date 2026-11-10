@@ -220,7 +220,7 @@ html[data-mode="simple"] .m-f,html[data-mode="full"] .m-s{display:none!important
 
   <div class="bar" role="group" aria-label="Map layers">
     <span class="lbl"><span class="m-s">SHOW ON THE MAP</span><span class="m-f">LAYERS</span></span>
-    <button class="chip" data-layer="territory" aria-pressed="true"><span class="n">1</span><span class="m-s">The 5 stops</span><span class="m-f">Territory</span></button>
+    <button class="chip" data-layer="territory" aria-pressed="true"><span class="n">1</span><span class="m-s">The 5 steps</span><span class="m-f">Territory</span></button>
     <button class="chip" data-layer="people" aria-pressed="true"><span class="n">2</span><span class="m-s">The people</span><span class="m-f">People</span></button>
     <button class="chip" data-layer="ai" aria-pressed="true"><span class="n">3</span><span class="m-s">Where AI is (and isn't)</span><span class="m-f">AI touchpoints &amp; non-use</span></button>
     <button class="chip" data-layer="handoff" aria-pressed="true"><span class="n">4</span><span class="m-s">Checking the AI</span><span class="m-f">Hand-offs</span></button>
@@ -251,7 +251,7 @@ html[data-mode="simple"] .m-f,html[data-mode="full"] .m-s{display:none!important
       <span><svg width="30" height="22" viewBox="0 0 30 22"><path d="M2 11 H24" stroke="var(--hand)" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#arrH)"/></svg><span class="m-f">Hand-off: AI output → human check</span><span class="m-s">A person checks the AI's work</span></span>
       <span><svg width="22" height="22" viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" fill="var(--ink)"/></svg><span class="m-f">Formal decider</span><span class="m-s">The boss of this step</span></span>
       <span><svg width="22" height="22" viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="3 2"/></svg><span class="m-f">Informal influence</span><span class="m-s">Has sway, but isn't the boss</span></span>
-      <span class="screen-only note"><span class="m-f">Click any shape to open it.</span><span class="m-s">Tap a shape to read about that stop.</span></span>
+      <span class="screen-only note"><span class="m-f">Click any shape to open it.</span><span class="m-s">Tap a shape to read about that step.</span></span>
     </div>
   </div>
 
@@ -574,7 +574,7 @@ const KC=[
  {t:"A well-built tutor can really help.",f:"College physics students learned more from an AI tutor designed by Professors than from a regular hands-on class.",m:"Our helper follows teaching rules: one problem at a time, and a question back. Physics isn't geometry, so we still have to check that it works here."},
  {t:"AIs bluff on hard proofs.",f:"Experts graded AI answers to very hard math-contest proofs. Most AIs got less than 5% right, even though they sounded sure.",m:"The AI never grades and never says a proof is correct. People do."}
 ];
-const TRACE_S=["Follow the 5 stops from start to quiz","Say who does what, and who's in charge, at each stop","Find where the AI is allowed","Find the no-AI zones","Find every place a person must decide"];
+const TRACE_S=["Follow the 5 steps from start to quiz","Say who does what, and who's in charge, at each step","Find where the AI is allowed","Find the no-AI zones","Find every place a person must decide"];
 
 const NS="http://www.w3.org/2000/svg";
 const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
@@ -648,7 +648,7 @@ function simpleHTML(r){
   const aiTag=r.ai==="insert"?'<span class="tag t-ai">◆ AI allowed here (only here)</span>':r.ai==="stop"?'<span class="tag t-stop">No AI zone</span>':'';
   const hTag=r.human?'<span class="tag t-human">A person decides</span>':'';
   const ppl=r.people.map(([id])=>`<li><span class="av ${P[id].nv?'nv':''}">${id}</span><span><b>${KP[id]}</b>: ${k.who[id]}</span></li>`).join("");
-  return `<div class="head"><span class="eyebrow">Stop ${r.n} of 5</span><h2>${k.title}: ${k.sub}</h2>${aiTag}${hTag}</div>
+  return `<div class="head"><span class="eyebrow">Step ${r.n} of 5</span><h2>${k.title}: ${k.sub}</h2>${aiTag}${hTag}</div>
   <section><span class="eyebrow">What happens</span><p>${k.what}</p></section>
   <section><span class="eyebrow">Who's there</span><ul class="people">${ppl}</ul></section>
   <section><span class="eyebrow">Is AI allowed?</span><p>${k.ai}</p>${k.gets?`<dl class="kv"><dt>Gets</dt><dd>${k.gets}</dd><dt>Gives</dt><dd>${k.gives}</dd></dl>`:""}</section>
@@ -671,7 +671,7 @@ function detailHTML(r,forceFull){
 const detail=document.getElementById("detail");
 let current=3;try{const s=+localStorage.getItem("m140-region");if(s>=1&&s<=5)current=s}catch(e){}
 let tapped=false;
-function openRegion(n,fromTap){current=n;if(fromTap)tapped=true;if(!tapped){detail.className="tapnote";detail.innerHTML=mode()==="simple"?"<b>Tap a stop</b> on the map to see what happens there.":"<b>Select a stop</b> on the map to open its details.";return}detail.className="detail";detail.innerHTML=detailHTML(R[n-1]);if(fromTap)detail.scrollIntoView({behavior:"smooth",block:"nearest"});document.querySelectorAll(".region").forEach(g=>g.classList.toggle("on",+g.dataset.n===n));try{localStorage.setItem("m140-region",n)}catch(e){}}
+function openRegion(n,fromTap){current=n;if(fromTap)tapped=true;if(!tapped){detail.className="tapnote";detail.innerHTML=mode()==="simple"?"<b>Tap a step</b> on the map to see what happens there.":"<b>Select a step</b> on the map to open its details.";return}detail.className="detail";detail.innerHTML=detailHTML(R[n-1]);if(fromTap)detail.scrollIntoView({behavior:"smooth",block:"nearest"});document.querySelectorAll(".region").forEach(g=>g.classList.toggle("on",+g.dataset.n===n));try{localStorage.setItem("m140-region",n)}catch(e){}}
 function drawCards(){
   document.getElementById("cards").innerHTML=mode()==="simple"
     ?CARDS.map((c,i)=>`<article class="card"><h3>${KC[i].t}</h3><p>${KC[i].f}</p><dl class="kv"><dt>So on our map</dt><dd>${KC[i].m}</dd></dl><p class="src">${c.src}</p></article>`).join("")

@@ -84,11 +84,11 @@
   },
   {
    "cat": "seed",
-   "q": "What are the 5 stops?",
+   "q": "What are the 5 steps?",
    "steps": [
     "🌱 1 Draw: draw by hand.",
     "🌿 2 Write: write your own proof.",
-    "💧 3 Hint: get 1 hint. The only AI stop.",
+    "💧 3 Hint: get 1 hint. The only AI step.",
     "🌸 4 Explain: explain out loud.",
     "🍓 5 Quiz: show what you know."
    ],
@@ -108,7 +108,7 @@
    "cat": "seed",
    "q": "Why a garden?",
    "steps": [
-    "Each stop is a garden stage: seed, sprout, water, bloom, fruit.",
+    "Each step is a garden stage: seed, sprout, water, bloom, fruit.",
     "The AI hint is the water.",
     "A little water helps a plant grow.",
     "Too much water drowns it. A hint that gives the answer is too much."
@@ -128,7 +128,7 @@
    "cat": "water",
    "q": "Where is the AI?",
    "steps": [
-    "Only at Stop 3, the hint helper.",
+    "Only at Step 3, the hint helper.",
     "There is no AI when you draw, explain, or take the quiz."
    ],
    "note": "01 MATH 140 Course Map.md",
@@ -300,7 +300,7 @@
   },
   {
    "cat": "people",
-   "q": "Who decides at each stop?",
+   "q": "Who decides at each step?",
    "steps": [
     "🌱 Draw: the Professor.",
     "🌿 Write: the student.",
@@ -576,7 +576,7 @@
    "q": "Is the quiz open book or no computers?",
    "steps": [
     "The syllabus says each exam is open book.",
-    "Our map says Stop 5 has no computers.",
+    "Our map says Step 5 has no computers.",
     "Ask the Professor which rule is true."
    ],
    "note": "MATH 140 Course Map - Unified.md",

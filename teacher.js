@@ -146,4 +146,4 @@ $("teacher-filters").addEventListener("click", (e) => {
   render();
 });
 document.querySelector('.nav-btn[data-tab="teacher"]').addEventListener("click", () => { if (!loaded) load(); });
-if (location.hash === "#teacher") load();
+if (location.hash === "#teacher" || location.hash === "#professor") load();

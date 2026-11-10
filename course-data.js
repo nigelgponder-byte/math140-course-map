@@ -27,7 +27,7 @@ export const WEEKS = [
     deliverables: [
       { name: "Problem Set: Euclidean Geometry", type: "assignment", weight: "Standard" }
     ],
-    stop: "Stop 1: Draw (No AI)"
+    stop: "Step 1: Draw (No AI)"
   },
   {
     week: 2,
@@ -39,7 +39,7 @@ export const WEEKS = [
       { name: "Problem Set: Quadratics & Trig", type: "assignment", weight: "Standard" },
       { name: "Discussion 1: Math in Art & Architecture", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 1: Draw (No AI)"
+    stop: "Step 1: Draw (No AI)"
   },
   {
     week: 3,
@@ -51,7 +51,7 @@ export const WEEKS = [
       { name: "Vector Activity", type: "activity", weight: "5%" },
       { name: "Discussion 2: Math in Your Creative Major", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 2: Write (No AI) & Stop 3: Hint (AI Allowed)"
+    stop: "Step 2: Write (No AI) & Step 3: Hint (AI Allowed)"
   },
   {
     week: 4,
@@ -61,7 +61,7 @@ export const WEEKS = [
     deliverables: [
       { name: "Discussion 3: Candy Bar Geometry & Packaging", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 2: Write (No AI) & Stop 3: Hint (AI Allowed)"
+    stop: "Step 2: Write (No AI) & Step 3: Hint (AI Allowed)"
   },
   {
     week: 5,
@@ -72,7 +72,7 @@ export const WEEKS = [
       { name: "Polygonal Geometry Exam (33 Q, Open Book)", type: "exam", weight: "10%" },
       { name: "Discussion 4: Non-Euclidean Concepts in Creative Fields", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 3: Hint (AI Allowed) & Stop 4: Explain (No AI)"
+    stop: "Step 3: Hint (AI Allowed) & Step 4: Explain (No AI)"
   },
   {
     week: 6,
@@ -84,7 +84,7 @@ export const WEEKS = [
       { name: "Problem Set: Transformational Geometry", type: "assignment", weight: "Standard" },
       { name: "Discussion 5: Geometry of Physical Space in Practice", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 3: Hint (AI Allowed) & Stop 4: Explain (No AI)"
+    stop: "Step 3: Hint (AI Allowed) & Step 4: Explain (No AI)"
   },
   {
     week: 7,
@@ -95,7 +95,7 @@ export const WEEKS = [
       { name: "Transformational Geometry Exam (33 Q, Open Book)", type: "exam", weight: "10%" },
       { name: "Discussion 6: Vertex Coloring in Real-World Systems", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 3: Hint (AI Allowed) & Stop 4: Explain (No AI)"
+    stop: "Step 3: Hint (AI Allowed) & Step 4: Explain (No AI)"
   },
   {
     week: 8,
@@ -107,7 +107,7 @@ export const WEEKS = [
       { name: "Problem Set: Non-Euclidean Geometry & Topology", type: "assignment", weight: "Standard" },
       { name: "Discussion 7: The Golden Ratio in Art & Design", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 3: Hint (AI Allowed) & Stop 4: Explain (No AI)"
+    stop: "Step 3: Hint (AI Allowed) & Step 4: Explain (No AI)"
   },
   {
     week: 9,
@@ -118,7 +118,7 @@ export const WEEKS = [
       { name: "Modern Geometry Exam (33 Q, Open Book)", type: "exam", weight: "10%" },
       { name: "Discussion 8: Euler Circuits in Urban & Motion Design", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 4: Explain (No AI)"
+    stop: "Step 4: Explain (No AI)"
   },
   {
     week: 10,
@@ -131,15 +131,15 @@ export const WEEKS = [
       { name: "Discussion 9: Fractals in Your Major", type: "discussion", weight: "2.5%" },
       { name: "Discussion 10: Retrospective & Lessons Learned", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 5: Quiz & Project Defense (No AI - Professor Grades)"
+    stop: "Step 5: Quiz & Project Defense (No AI - Professor Grades)"
   }
 ];
 
 export const EIGHT_KEYS = [
   {
     num: 1,
-    title: "The Single Stop Boundary (Stop 3 Only)",
-    detail: "AI is strictly prohibited from drawing constructions, writing proofs from scratch, or assigning grades. It exists solely at Stop 3 as a reflective mirror for your own draft."
+    title: "The Single Step Boundary (Step 3 Only)",
+    detail: "AI is strictly prohibited from drawing constructions, writing proofs from scratch, or assigning grades. It exists solely at Step 3 as a reflective mirror for your own draft."
   },
   {
     num: 2,
@@ -164,7 +164,7 @@ export const EIGHT_KEYS = [
   {
     num: 6,
     title: "Physical Compass & Hand-Drafting Primacy",
-    detail: "Euclidean geometry begins in the hands. Compass and straightedge drawing at Stop 1 cannot be automated—spatial intuition begins with tactile construction."
+    detail: "Euclidean geometry begins in the hands. Compass and straightedge drawing at Step 1 cannot be automated—spatial intuition begins with tactile construction."
   },
   {
     num: 7,
@@ -173,7 +173,7 @@ export const EIGHT_KEYS = [
   },
   {
     num: 8,
-    title: "Stop 4 Board Presentation Defense",
+    title: "Step 4 Board Presentation Defense",
     detail: "You must explain your proof verbally to peer partners at the board ('Bloom'). If you did not reason through the proof yourself, you cannot defend it under peer inquiry."
   }
 ];

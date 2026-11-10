@@ -1,4 +1,4 @@
-// Proof Check: the only place AI is allowed (Stop 3).
+// Proof Check: the only place AI is allowed (Step 3).
 // The model answers in fixed JSON (VERDICT_PROMPT). This code, not the model's wording,
 // decides the verdict and writes the reply the student sees.
 // Vercel AI Gateway authenticates deployed functions with a short-lived OIDC token,

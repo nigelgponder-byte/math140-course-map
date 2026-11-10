@@ -230,7 +230,7 @@ function render(){
     m.querySelector("[data-pick]").onclick=()=>{S.screen="pick";S.checks={};render()};
   }
   else if(S.screen==="board"){
-    m.innerHTML=`<h2>Last stop: explain it at the board</h2><p>This part has <b>no AI</b>. You explain your proof out loud, and your partner asks "why?" If you can explain it, you learned it.</p>
+    m.innerHTML=`<h2>Last step: explain it at the board</h2><p>This part has <b>no AI</b>. You explain your proof out loud, and your partner asks "why?" If you can explain it, you learned it.</p>
     <p class="note">This is where the demo ends. The real class continues with the board talk and the no-computer quiz.</p>
     <div class="row"><button class="btn ghost" data-pick type="button">Try another proof</button></div>`;
     m.querySelector("[data-pick]").onclick=()=>{S.screen="pick";S.checks={};render()};
