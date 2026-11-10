@@ -7,7 +7,7 @@
 window.SCENE = {
 
 n:3, emoji:"💧", name:"Water: Get one hint (the AI part)", dur:20,
-captions:[[0.3,3,"Part 3. Get one hint. This is the AI part."],[3,5.5,"1. The helper reads YOUR proof."],[5.5,9,"2. It points at ONE weak step."],[9,13,"3. A little water helps. Too much drowns the plant."],[13,16.5,"4. You decide: makes sense, not sure, or disagree."],[16.5,20,"Not sure? The teacher checks it. 💧"]],
+captions:[[0.3,3,"Part 3. Get one hint. This is the AI part."],[3,5.5,"1. The helper reads YOUR proof."],[5.5,9,"2. It points at ONE weak step."],[9,13,"3. A little water helps. Too much drowns the plant."],[13,16.5,"4. You decide: makes sense, not sure, or disagree."],[16.5,20,"Not sure? The Professor checks it. 💧"]],
 draw(t){
   const rows=[["AB = AC","Given"],["Draw AD to cut ∠A in half","Construction"],["∠BAD = ∠CAD","Cut in half"],["AD = AD","Same segment"],["△ABD ≅ △ACD","SAS"],["∠B = ∠C","“They look equal”"]];
   const tA=t<9?1:1-prog(t,9,9.5);
@@ -33,7 +33,7 @@ draw(t){
     opts.forEach((o,i)=>{const x=280+i*360, on=i===1&&t>14.6; box(x-150,250,300,72,36,on?"rgba(255,95,162,.25)":"rgba(255,255,255,.06)",on?C.pink:"rgba(255,255,255,.35)",q,on?4:2); label(o,x,286,q,C.ink,`700 28px ${SANS}`);});
     const a=prog(t,16.6,17.6); line(640,330,640,330+120*a,1,C.pink,4);
     if(a>0.95){g.fillStyle=C.pink;g.beginPath();g.moveTo(628,440);g.lineTo(652,440);g.lineTo(640,458);g.fill();}
-    const tb=prog(t,17.4,18.2); box(470,466,340,62,31,"rgba(79,123,255,.2)",C.blue,tb,3); label("🧑‍🌾 Teacher checks it",640,497,tb,C.ink,`700 26px ${SANS}`);}
+    const tb=prog(t,17.4,18.2); box(470,466,340,62,31,"rgba(79,123,255,.2)",C.blue,tb,3); label("🧑‍🌾 Professor checks it",640,497,tb,C.ink,`700 26px ${SANS}`);}
 }
 };
 </script>

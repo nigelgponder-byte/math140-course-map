@@ -1,6 +1,6 @@
 // ✅ Reason check (practice only, no AI). Shared by the page and the server.
 // It looks for real rule words in each "because ____" reason. It never says "correct":
-// only the teacher decides that.
+// only the Professor decides that.
 
 // One list per path. Item i checks the reason in the i-th "because" step.
 export const RUBRIC = {

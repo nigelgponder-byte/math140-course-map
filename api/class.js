@@ -1,5 +1,5 @@
-// 🧑‍🏫 Class log for the Teacher tab. This site has no database yet, so it runs in demo mode:
-// GET returns made-up students (setup: true tells the page no teacher code is configured),
+// 🧑‍🏫 Class log for the Professor tab. This site has no database yet, so it runs in demo mode:
+// GET returns made-up students (setup: true tells the page no Professor code is configured),
 // POST accepts a student's check but keeps nothing, DELETE has nothing to clear.
 import { KEY, DEMO_ATTEMPTS } from "./_class-data.js";
 

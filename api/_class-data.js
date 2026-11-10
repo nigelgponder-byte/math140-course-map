@@ -1,4 +1,4 @@
-// Sample class for the Teacher tab, plus the answer key (true proofs and the reasons a teacher accepts).
+// Sample class for the Professor tab, plus the answer key (true proofs and the reasons a Professor accepts).
 // Copied from the MATH 140 Study Tool. Timestamps are offsets so the demo always looks recent.
 const latest = 1793293954185;
 export const KEY = {

@@ -192,7 +192,7 @@ function ask(q){
     const more=ranked.slice(1,4).filter(r=>r.s>=1);
     out.innerHTML=card(best.it)+(more.length?`<p class="note-safe" style="margin-top:12px">Also see:</p><div class="chips">${more.map(r=>`<button class="chip" type="button" data-ask="${esc(r.it.q)}">${EMO[r.it.cat]} ${esc(r.it.q)}</button>`).join("")}</div>`:"");
   } else {
-    out.innerHTML=`<div class="miss"><b>I do not have that answer yet.</b><p>Try 1 of these questions. Or ask your teacher.</p><div class="chips">${QA.questions.slice(0,40).sort(()=>0).filter((_,i)=>[0,6,10,17,23].includes(i)).map(it=>`<button class="chip" type="button" data-ask="${esc(it.q)}">${EMO[it.cat]} ${esc(it.q)}</button>`).join("")}</div></div>`;
+    out.innerHTML=`<div class="miss"><b>I do not have that answer yet.</b><p>Try 1 of these questions. Or ask your Professor.</p><div class="chips">${QA.questions.slice(0,40).sort(()=>0).filter((_,i)=>[0,6,10,17,23].includes(i)).map(it=>`<button class="chip" type="button" data-ask="${esc(it.q)}">${EMO[it.cat]} ${esc(it.q)}</button>`).join("")}</div></div>`;
   }
   wire(out);
 }

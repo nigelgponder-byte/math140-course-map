@@ -1,5 +1,5 @@
-// Teacher tab: every student's checked proofs next to the true proofs.
-// The teacher code is kept only for this browser tab (sessionStorage).
+// Professor tab: every student's checked proofs next to the true proofs.
+// The Professor code is kept only for this browser tab (sessionStorage).
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const WORLD = { animals: "Animals", sports: "Sports", space: "Space", music: "Music", food: "Food", games: "Games" };
@@ -18,7 +18,7 @@ async function load() {
     $("teacher-login").classList.remove("hidden");
     $("teacher-tools").classList.add("hidden");
     $("teacher-body").classList.add("hidden");
-    return banner("", getPin() ? "" : "Type the teacher code to see the class.");
+    return banner("", getPin() ? "" : "Type the Professor code to see the class.");
   }
   data = await res.json();
   $("teacher-login").classList.add("hidden");
@@ -27,7 +27,7 @@ async function load() {
   $("t-clear").classList.toggle("hidden", data.demo);
   if (data.setup) {
     banner("", `<b>Demo mode.</b> These students are made up. This site does not save student proofs yet:
-      it needs a class log database and a teacher code before real proofs show up here.`);
+      it needs a class log database and a Professor code before real proofs show up here.`);
   } else if (data.demo) {
     banner("", "<b>Demo students.</b> These are made up. Press Show real class to go back.");
   } else if (data.storage === "memory") {

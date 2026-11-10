@@ -131,7 +131,7 @@ export const WEEKS = [
       { name: "Discussion 9: Fractals in Your Major", type: "discussion", weight: "2.5%" },
       { name: "Discussion 10: Retrospective & Lessons Learned", type: "discussion", weight: "2.5%" }
     ],
-    stop: "Stop 5: Quiz & Project Defense (No AI - Teacher Grades)"
+    stop: "Stop 5: Quiz & Project Defense (No AI - Professor Grades)"
   }
 ];
 
@@ -206,7 +206,7 @@ Rules:
 - "draft" is true when the message has 2 or more numbered steps, even if the reasons are weak or silly. "draft" is false only when there is no attempt with 2 steps, or the message only asks for the answer. Then set gap to true, step to null, hint to "", question to "".
 - Steps marked "(Given)" never need a reason. Never pick a Given step.
 - Steps the message lists as ALREADY CHECKED are done. Never pick them.
-- If the message has a TEACHER NOTE with accepted reasons, a reason with the same idea counts. Do not ask for more than the teacher accepts. Never copy words from the TEACHER NOTE into the hint or question.
+- If the message has a PROFESSOR NOTE with accepted reasons, a reason with the same idea counts. Do not ask for more than the Professor accepts. Never copy words from the PROFESSOR NOTE into the hint or question.
 - A reason in everyday words counts when it names the right idea. Example: "take 3 off both sides" is a property of equality. Do not ask for formal names, more detail, or nicer wording.
 - If every reason names a real rule, set gap to false, step to null, hint to "", question to "". Do not invent problems.
 - If gap is true: "step" is the number of the FIRST weak step. "hint" is 1 sentence under 25 words that names only the KIND of rule needed (for example "a property of equality", "a theorem about right triangles", "substituting a value"). Do not give the exact name of the rule (no "subtraction property", no "Pythagorean theorem") or the words to write. "question" is 1 short question that makes the student think.

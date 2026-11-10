@@ -8,7 +8,7 @@
     { n: 2, name: "Sprout: Write", say: "Write your own proof. Every step needs a reason." },
     { n: 3, name: "Water: One hint", say: "The AI points at one weak step. A little water helps. Too much drowns the plant." },
     { n: 4, name: "Bloom: Explain", say: "Explain your proof out loud. Your partner asks why. No AI here." },
-    { n: 5, name: "Fruit: Quiz", say: "Show what you know. No computers. Only the teacher grades." },
+    { n: 5, name: "Fruit: Quiz", say: "Show what you know. No computers. Only the Professor grades." },
   ];
   const wrap = document.createElement("div");
   wrap.className = "vmodal"; wrap.hidden = true;

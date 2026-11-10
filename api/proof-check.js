@@ -41,14 +41,14 @@ function parseVerdict(text) {
   try { return JSON.parse(m[0]); } catch { return null; }
 }
 
-// A guided path tells the model which steps are done and which reasons the teacher accepts.
+// A guided path tells the model which steps are done and which reasons the Professor accepts.
 function buildPrompt(text, path, locked) {
   const parts = [`STUDENT PROOF:\n${text}`];
   if (locked.length) parts.push(`ALREADY CHECKED: step ${locked.join(", step ")}. These are done.`);
   const key = KEY[path];
   if (key) {
     const notes = key.steps.map((s, i) => (/^given$/i.test(s.r) ? null : `step ${i + 1}: ${s.r}${s.kid ? ` A student might say ${s.kid}` : ""}`)).filter(Boolean);
-    parts.push(`TEACHER NOTE (accepted reasons, never quote these):\n${notes.join("\n")}`);
+    parts.push(`PROFESSOR NOTE (accepted reasons, never quote these):\n${notes.join("\n")}`);
   }
   return parts.join("\n\n");
 }
@@ -61,7 +61,7 @@ function result(verdict, extra = {}) {
   if (verdict === "gap") {
     reply = [`Look at step ${step}. ${sentence(hint)}`.trim(), question.trim() || "What rule can justify this step?"].join("\n\n");
   } else if (verdict === "no_gap") {
-    reply = "I can't find a missing reason. That does not mean it is correct. Your teacher still checks it.";
+    reply = "I can't find a missing reason. That does not mean it is correct. Your Professor still checks it.";
   } else if (verdict === "need_draft") {
     reply = "I can only look at a proof you already wrote. Write at least 2 steps. Give each step a reason.\n\nWhat is your first step?";
   } else {

@@ -13,7 +13,7 @@ draw(t){
   line(640,150,640,560,prog(t,0.8,2.4),"rgba(255,255,255,.35)",3);
   label("🧑‍🎓 Our team",420,140,prog(t,1.2,2)*dim,C.pink,`700 26px ${SANS}`);
   label("🤖 AI (Claude)",860,140,prog(t,1.2,2)*dim,C.cyan,`700 26px ${SANS}`);
-  const rows=[["Sep 24","Picked the class","Built the first map"],["Sep 29","Switched to MATH 140","Built the new map"],["Oct 1","Named the teacher responsible","Ran 3 hint tests"],["Oct 6","Asked for kid-friendly words","Built the helper + videos"]];
+  const rows=[["Sep 24","Picked the class","Built the first map"],["Sep 29","Switched to MATH 140","Built the new map"],["Oct 1","Named the Professor responsible","Ran 3 hint tests"],["Oct 6","Asked for kid-friendly words","Built the helper + videos"]];
   rows.forEach(([d,us,ai],i)=>{const y=210+i*92, a=prog(t,2.6+i*0.9,3.2+i*0.9)*dim, b=prog(t,7.6+i*0.9,8.2+i*0.9)*dim;
     dot(640,y,a,C.ink,8); label(d,640,y-26,a,C.dim,`600 16px ${SANS}`);
     g.font=`600 21px ${SANS}`; const w1=g.measureText(us).width+36, w2=g.measureText(ai).width+36;

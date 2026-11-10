@@ -82,7 +82,7 @@ const CAPS = [
   [2.8, 5.4, STORY.setup[0]], [5.4, 8.0, STORY.setup[1]],
   [8.2, 10.8, STORY.twist[GUESS][0]], [10.8, 14.7, STORY.twist[GUESS][1]],
   [15.0, 17.6, R1 ? "✨ Your magic words, step 2…" : "✨ Your magic words…"], [17.6, 20.0, R2 ? "✨ …and step 3!" : "✨ Watch them work!"],
-  [20.0, 22.8, STORY.reveal], [22.9, 25.3, ENDLINE], [25.3, 28, "Your teacher still checks it."],
+  [20.0, 22.8, STORY.reveal], [22.9, 25.3, ENDLINE], [25.3, 28, "Your Professor still checks it."],
 ];
 
 // ---------- Drawing helpers ----------
@@ -367,7 +367,7 @@ function draw2(t){
   if (end > 0) { g.fillStyle = `rgba(2,3,12,${0.82 * end})`; g.fillRect(0, 0, 1280, 720);
     label("THE END", 640, 250, end, "#FFFFFF", `400 76px ${DISPLAY}`);
     label(`🎬 Sequel: ${SEQ}`, 640, 340, prog(t, 26.0, 26.6), "#9FF3FF", `700 28px ${SANS}`);
-    label("Try it in your notebook. Your teacher checks it.", 640, 390, prog(t, 26.3, 26.9), "#BFD3FF", `600 22px ${SANS}`); }
+    label("Try it in your notebook. Your Professor checks it.", 640, 390, prog(t, 26.3, 26.9), "#BFD3FF", `600 22px ${SANS}`); }
   const bar = 44 * prog(t, 0, 0.8);
   g.fillStyle = "#000"; g.fillRect(0, 0, 1280, bar); g.fillRect(0, 720 - bar, 1280, bar);
   label(`Movie #${SEED % 10000}`, 1240, 24, 0.55 * prog(t, 0.5, 1), "#8C96C4", `600 14px ${SANS}`, "right");

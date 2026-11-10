@@ -71,7 +71,7 @@
     "Can geometry students fixing their own proofs…",
     "…use an AI that points only at the first weak step…",
     "…to find mistakes before the quiz…",
-    "…while every step stays theirs and only the teacher grades?"
+    "…while every step stays theirs and only the Professor grades?"
    ],
    "note": "01 MATH 140 Course Map.md",
    "kw": [
@@ -206,9 +206,9 @@
    "q": "What if a hint is wrong?",
    "steps": [
     "Pick Not sure or I disagree.",
-    "The hint goes to the teacher's list.",
-    "The teacher checks it in 2 days. This is before you present.",
-    "If it was wrong, the teacher tells you."
+    "The hint goes to the Professor's list.",
+    "The Professor checks it in 2 days. This is before you present.",
+    "If it was wrong, the Professor tells you."
    ],
    "note": "01 MATH 140 Course Map.md",
    "kw": [
@@ -225,9 +225,9 @@
    "cat": "water",
    "q": "Who is responsible for a wrong hint?",
    "steps": [
-    "The teacher.",
-    "The teacher picks the tool.",
-    "The teacher checks every unsure hint."
+    "The Professor.",
+    "The Professor picks the tool.",
+    "The Professor checks every unsure hint."
    ],
    "note": "Stakeholder Snapshot.md",
    "kw": [
@@ -302,11 +302,11 @@
    "cat": "people",
    "q": "Who decides at each stop?",
    "steps": [
-    "🌱 Draw: the teacher.",
+    "🌱 Draw: the Professor.",
     "🌿 Write: the student.",
-    "💧 Hint: the teacher, for unsure hints.",
-    "🌸 Explain: the teacher.",
-    "🍓 Quiz: the teacher gives all grades."
+    "💧 Hint: the Professor, for unsure hints.",
+    "🌸 Explain: the Professor.",
+    "🍓 Quiz: the Professor gives all grades."
    ],
    "note": "01 MATH 140 Course Map.md",
    "kw": [
@@ -345,7 +345,7 @@
    "q": "What if I have no computer?",
    "steps": [
     "Use the paper rule list. 📗",
-    "Go to the teacher's office hours.",
+    "Go to the Professor's office hours.",
     "It counts the same as the AI way.",
     "Help is slower. That is a real gap."
    ],
@@ -383,7 +383,7 @@
    "q": "Who are the stakeholders?",
    "steps": [
     "1. Students: they use it.",
-    "2. The teacher: the boss.",
+    "2. The Professor: the boss.",
     "3. Partners and tutors: people nearby.",
     "4. People who can be left out.",
     "5. People who get hurt if it goes wrong."
@@ -422,7 +422,7 @@
    "cat": "science",
    "q": "What did the Kestin study find?",
    "steps": [
-    "College physics students used a teacher-built AI tutor.",
+    "College physics students used a Professor-built AI tutor.",
     "They learned more than in a normal class.",
     "Physics is not geometry. We must still test it."
    ],
@@ -577,7 +577,7 @@
    "steps": [
     "The syllabus says each exam is open book.",
     "Our map says Stop 5 has no computers.",
-    "Ask the teacher which rule is true."
+    "Ask the Professor which rule is true."
    ],
    "note": "MATH 140 Course Map - Unified.md",
    "kw": [
@@ -630,7 +630,7 @@
    "q": "Will kids say \"Not sure\" honestly?",
    "steps": [
     "We do not know yet.",
-    "Test: the teacher checks 20 hints. Compare with the kids' answers."
+    "Test: the Professor checks 20 hints. Compare with the kids' answers."
    ],
    "note": "Stakeholder Snapshot.md",
    "kw": [
@@ -644,7 +644,7 @@
   },
   {
    "cat": "wonder",
-   "q": "Is there time for the teacher to check every unsure hint?",
+   "q": "Is there time for the Professor to check every unsure hint?",
    "steps": [
     "We do not know yet.",
     "Test: count unsure hints for 1 unit."
@@ -653,6 +653,7 @@
    "kw": [
     "time",
     "teacher",
+    "professor",
     "busy",
     "check"
    ],

@@ -416,18 +416,18 @@ function showGate({ agree, capped, busy, check, status, data }) {
     const head = busy
       ? "<b>Every reason has a rule word!</b> The AI helper was busy, so only the word check ran this time."
       : "<b>2 checks agree!</b> The AI found no missing reason, and every reason has a rule word.";
-    rewardCard(head, "Your teacher still checks it.");
+    rewardCard(head, "Your Professor still checks it.");
     return;
   }
   if (capped) {
     box.innerHTML = `
       <div class="teacher-card">
-        <div class="reward-head"><b>Show your teacher.</b> You tried ${MAX_ROUNDS} times. That is real work!</div>
-        <p class="path-tip">Your teacher can see this proof. They will help with ${weak ? `step ${weak.n}` : "the last step"}.</p>
+        <div class="reward-head"><b>Show your Professor.</b> You tried ${MAX_ROUNDS} times. That is real work!</div>
+        <p class="path-tip">Your Professor can see this proof. They will help with ${weak ? `step ${weak.n}` : "the last step"}.</p>
         ${check.pass ? `<div class="path-actions"><button type="button" class="btn" id="reward-anyway">Open my video anyway</button></div>` : ""}
         <div id="reward-stage"></div>
       </div>`;
-    document.getElementById("reward-anyway")?.addEventListener("click", () => rewardCard("<b>Every reason has a rule word.</b> Your teacher checks the last step.", "Your teacher still checks it.", true));
+    document.getElementById("reward-anyway")?.addEventListener("click", () => rewardCard("<b>Every reason has a rule word.</b> Your Professor checks the last step.", "Your Professor still checks it.", true));
     return;
   }
   const left = MAX_ROUNDS - attempt.round;
@@ -435,10 +435,10 @@ function showGate({ agree, capped, busy, check, status, data }) {
   const msg = !weak ? "Write each step with a reason."
     : data.verdict === "no_gap" ? `The AI found no missing reason, but <b>step ${weak.n}</b> needs a rule word, not a picture.`
     : `Fix <b>step ${weak.n}</b>. Use a math rule, not a picture.`;
-  box.innerHTML = `<div class="reward-nudge"><b>Almost!</b> ${msg} Then press <b>Evaluate Proof</b> again. ${left} ${left === 1 ? "try" : "tries"} left before we show your teacher.</div>`;
+  box.innerHTML = `<div class="reward-nudge"><b>Almost!</b> ${msg} Then press <b>Evaluate Proof</b> again. ${left} ${left === 1 ? "try" : "tries"} left before we show your Professor.</div>`;
 }
 
-// Save the check for the Teacher tab (nickname only).
+// Save the check for the Professor tab (nickname only).
 function logCheck(id, text, check, status, data, rewardable, needsHelp) {
   const body = {
     nick: getNick() || "Guest", world: getWorld(), path: id, text, guess: attempt.guess, round: attempt.round,
@@ -567,7 +567,7 @@ function showWrite() {
          <li>Press <b>Evaluate Proof</b>. The helper points at <b>1 weak step</b>, or finds none.</li>
          <li>When <b>every step is ✅</b>, your movie unlocks.</li>
        </ol>
-       <p class="path-tip">Your teacher can see the proofs you check here, with your nickname.</p>`;
+       <p class="path-tip">Your Professor can see the proofs you check here, with your nickname.</p>`;
   inputProof.focus();
   if (!p.send) {
     const at = inputProof.value.indexOf("____");

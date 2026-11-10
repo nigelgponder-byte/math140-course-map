@@ -100,8 +100,8 @@ ul.check input{width:18px;height:18px;margin-top:4px;accent-color:var(--human)}
 
   <div class="side">
     <section class="panel">
-      <h2>Teacher's check list</h2>
-      <p class="note">Hints you mark <b>Not sure</b> or <b>I disagree</b> land here. In the real class, the teacher checks each one within 2 days, before you present. <b>In this demo, nobody actually sees it.</b></p>
+      <h2>Professor's check list</h2>
+      <p class="note">Hints you mark <b>Not sure</b> or <b>I disagree</b> land here. In the real class, the Professor checks each one within 2 days, before you present. <b>In this demo, nobody actually sees it.</b></p>
       <div class="queue" id="queue"><p class="note">Empty so far.</p></div>
     </section>
     <section class="panel">
@@ -129,7 +129,7 @@ const PROOFS = [
    steps:[["AB = AC","Given"]], weak:0, hint:null},
   {id:"done", name:"A finished proof", goal:"If angle A = angle B and angle B = angle C, then angle A = angle C.",
    steps:[["Angle A = angle B","Given"],["Angle B = angle C","Given"],["Angle A = angle C","If two things equal the same thing, they equal each other"]],
-   weak:0, hint:"I didn't spot a weak reason. But I can't tell you a proof is correct; only your teacher can. Check each reason against your rule list one more time.", q:"Can you explain step 3 out loud in your own words?"}
+   weak:0, hint:"I didn't spot a weak reason. But I can't tell you a proof is correct; only your Professor can. Check each reason against your rule list one more time.", q:"Can you explain step 3 out loud in your own words?"}
 ];
 const RULES = ["Given (the problem tells you)","Anything equals itself","If two things equal the same thing, they equal each other","Take the same amount away from both sides","Angles on a straight line add to 180°","Cutting an angle in half makes two equal angles","SAS, SSS, ASA: when two triangles are the same shape and size","Matching parts of same-shape-and-size triangles are equal (CPCTC)"];
 const REFUSE = /\b(grade|score|points?|pass|fail|an? a\b|correct|right|ready|answer|solve|finish|complete|write|next step|do it|for me)\b/i;
@@ -186,7 +186,7 @@ function render(){
       m.innerHTML=`<h2>${esc(p.name)}</h2><p><b>Prove:</b> ${esc(p.goal)}</p>${proofTable(p,true)}
       <div class="hint"><span class="pill p-sim" style="align-self:flex-start">Simulated hint · written ahead of time</span>
         <p>${esc(p.hint)}</p>${p.q?`<p><b>Question for you:</b> ${esc(p.q)}</p>`:""}
-        <p class="note">This hint could be wrong. Check it against your rule list. Your teacher decides what's correct.</p></div>
+        <p class="note">This hint could be wrong. Check it against your rule list. Your Professor decides what's correct.</p></div>
       ${askBox()}
       <div class="row" id="hintRow"><button class="btn" data-review type="button">Next: decide about this hint</button><button class="btn warn" data-leak type="button">This hint gave away a step</button></div>`;
       m.querySelector("[data-review]").onclick=()=>{S.screen="review";render()};
@@ -221,7 +221,7 @@ function render(){
     const sent=S.path==="ai"&&S.verdict&&S.verdict!=="Makes sense";
     const items=["I wrote my fix myself, in my notebook","My new reason is a rule from the rule list, not a picture","I can explain this step out loud"];
     m.innerHTML=`<h2>Fix it yourself</h2>
-    ${sent?`<div class="msg m-hand">You marked this hint <b>${esc(S.verdict)}</b>, so it went to the teacher's check list. <b>Don't use it</b> until your teacher says it's OK. It is <b>not</b> in your fix list below.</div>`:""}
+    ${sent?`<div class="msg m-hand">You marked this hint <b>${esc(S.verdict)}</b>, so it went to the Professor's check list. <b>Don't use it</b> until your Professor says it's OK. It is <b>not</b> in your fix list below.</div>`:""}
     ${S.path==="ai"&&S.verdict==="Makes sense"?`<div class="msg m-ok">You said the hint makes sense. The helper still didn't write anything. The fix is yours to write.</div>`:""}
     <ul class="check">${items.map((t,i)=>`<li><label><input type="checkbox" id="c${i}" ${S.checks[i]?"checked":""}> <span>${t}</span></label></li>`).join("")}</ul>
     <div class="row"><button class="btn" data-board type="button">Next: explain it at the board</button><button class="btn ghost" data-pick type="button">Try another proof</button></div>`;
@@ -237,7 +237,7 @@ function render(){
   }
   else if(S.screen==="refused"){
     m.innerHTML=`<h2>The helper said no</h2><div class="msg m-stop"><b>I can't do that.</b> I don't give grades, say if a proof is right, or write steps. I can only point at one weak spot in a proof you wrote.</div>
-    <p>You can use the rule list instead, or ask your teacher.</p>
+    <p>You can use the rule list instead, or ask your Professor.</p>
     <div class="row"><button class="btn ghost" data-hint type="button">Back to the hint</button><button class="btn ghost" data-list type="button">Use the rule list instead</button></div>`;
     m.querySelector("[data-hint]").onclick=()=>{S.screen="hint";render()};
     m.querySelector("[data-list]").onclick=()=>{S.path="noai";S.screen="checklist";render()};
@@ -248,7 +248,7 @@ function render(){
     m.querySelector("[data-list]").onclick=()=>{S.path="noai";S.screen="checklist";render()};
   }
   else if(S.screen==="stopped"){
-    m.innerHTML=`<h2>Stopped</h2><div class="msg m-stop">You said a hint gave away a step. The helper is <b>stopped for this proof</b>, and your teacher has been told (in this demo: added to the teacher's check list).</div>
+    m.innerHTML=`<h2>Stopped</h2><div class="msg m-stop">You said a hint gave away a step. The helper is <b>stopped for this proof</b>, and your Professor has been told (in this demo: added to the Professor's check list).</div>
     <div class="row"><button class="btn" data-list type="button">Finish with the rule list</button></div>`;
     m.querySelector("[data-list]").onclick=()=>{S.path="noai";S.screen="checklist";render()};
   }
