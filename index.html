@@ -551,6 +551,52 @@
         <div id="teacher-banner"></div>
         <div id="teacher-body" class="hidden">
           <div id="teacher-stats" class="teacher-stats"></div>
+
+          <!-- Professor controls: a design mock-up. The controls respond, but nothing is saved
+               and the app does not change. Real controls need a class database and a Professor code. -->
+          <h3 class="teacher-h">Controls <span class="badge t-preview" data-variant="secondary">Design preview</span>
+            <small>A mock-up. These controls do not change the app yet.</small></h3>
+          <div class="t-controls" id="t-controls">
+            <div class="t-control">
+              <div class="t-control-head">
+                <h4 id="tc-ai-label">AI hint helper</h4>
+                <input type="checkbox" class="input" role="switch" id="tc-ai" checked aria-labelledby="tc-ai-label">
+              </div>
+              <p class="t-control-state" id="tc-ai-state">On. Students can ask for one hint at Step 3.</p>
+              <p class="t-control-note" id="tc-ai-note">The kill switch. Turn it off to stop every AI hint at once.</p>
+            </div>
+
+            <div class="t-control needs-ai">
+              <div class="t-control-head"><h4 id="tc-level-label">Hint detail</h4></div>
+              <div class="t-seg" role="group" aria-labelledby="tc-level-label">
+                <button type="button" class="btn" data-variant="outline" data-size="sm" data-level="short" aria-pressed="false">Short</button>
+                <button type="button" class="btn active" data-variant="outline" data-size="sm" data-level="standard" aria-pressed="true">Standard</button>
+                <button type="button" class="btn" data-variant="outline" data-size="sm" data-level="detailed" aria-pressed="false">Detailed</button>
+              </div>
+              <p class="t-control-note" id="tc-level-note">Points to the weak step, names the theorem family, and asks one question. (Today's setting.)</p>
+            </div>
+
+            <div class="t-control">
+              <div class="t-control-head"><h4 id="tc-flag-label">Flag me after</h4></div>
+              <div class="t-stepper" role="group" aria-labelledby="tc-flag-label">
+                <button type="button" class="btn" data-variant="outline" data-size="icon" id="tc-flag-down" aria-label="Fewer tries">−</button>
+                <output id="tc-flag" aria-live="polite"><b>3</b> tries</output>
+                <button type="button" class="btn" data-variant="outline" data-size="icon" id="tc-flag-up" aria-label="More tries">+</button>
+              </div>
+              <p class="t-control-note" id="tc-flag-note">A student who tries 3 times without fixing the step moves to Needs help, and the app says "Show your Professor."</p>
+            </div>
+
+            <div class="t-control">
+              <div class="t-control-head">
+                <h4>Privacy</h4>
+                <span class="badge" data-variant="outline">Always on</span>
+              </div>
+              <p class="t-control-state">Usernames only.</p>
+              <p class="t-control-note">No real names, emails or logins are stored. Students choose a first name or initials.</p>
+            </div>
+          </div>
+
+          <h3 class="teacher-h">Students <small>Tap a name to open.</small></h3>
           <div class="teacher-filters" id="teacher-filters">
             <button type="button" class="btn t-chip active" data-variant="outline" data-size="sm" data-f="all">All</button>
             <button type="button" class="btn t-chip" data-variant="outline" data-size="sm" data-f="1">Path 1</button>
@@ -559,7 +605,6 @@
             <button type="button" class="btn t-chip" data-variant="outline" data-size="sm" data-f="4">Path 4</button>
             <button type="button" class="btn t-chip" data-variant="outline" data-size="sm" data-f="help">Needs help</button>
           </div>
-          <h3 class="teacher-h">Students <small>Tap a name to open.</small></h3>
           <div id="teacher-students"></div>
           <h3 class="teacher-h">True proofs <small>Professor only. Tap to open.</small></h3>
           <div id="teacher-key"></div>

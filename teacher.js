@@ -145,5 +145,38 @@ $("teacher-filters").addEventListener("click", (e) => {
   $("teacher-filters").querySelectorAll("[data-f]").forEach((x) => x.classList.toggle("active", x === b));
   render();
 });
+// Professor controls: a design mock-up. The controls respond on screen,
+// but nothing is saved and the tool itself does not change.
+const LEVEL_NOTE = {
+  short: "Points to the weak step only. No theorem family, no question.",
+  standard: "Points to the weak step, names the theorem family, and asks one question. (Today's setting.)",
+  detailed: "Adds a reminder of the rule word to look up, then asks one question. Still never writes the step.",
+};
+let flagAfter = 3;
+$("tc-ai").addEventListener("change", (e) => {
+  const on = e.target.checked;
+  $("t-controls").classList.toggle("ai-off", !on);
+  $("tc-ai-state").textContent = on ? "On. Students can ask for one hint at Step 3." : "Off. No AI hints for anyone.";
+  $("tc-ai-note").textContent = on
+    ? "The kill switch. Turn it off to stop every AI hint at once."
+    : "Students would see: \"The hint helper is off. Use your paper rule list.\" The paper route still counts the same.";
+});
+document.querySelectorAll("#t-controls [data-level]").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll("#t-controls [data-level]").forEach((x) => {
+    x.classList.toggle("active", x === b);
+    x.setAttribute("aria-pressed", String(x === b));
+  });
+  $("tc-level-note").textContent = LEVEL_NOTE[b.dataset.level];
+}));
+function showFlag() {
+  $("tc-flag").innerHTML = `<b>${flagAfter}</b> ${flagAfter === 1 ? "try" : "tries"}`;
+  $("tc-flag-note").textContent = `A student who tries ${flagAfter} ${flagAfter === 1 ? "time" : "times"} without fixing the step moves to Needs help, and the app says "Show your Professor."`;
+  $("tc-flag-down").disabled = flagAfter <= 1;
+  $("tc-flag-up").disabled = flagAfter >= 5;
+}
+$("tc-flag-down").addEventListener("click", () => { flagAfter = Math.max(1, flagAfter - 1); showFlag(); });
+$("tc-flag-up").addEventListener("click", () => { flagAfter = Math.min(5, flagAfter + 1); showFlag(); });
+showFlag();
+
 document.querySelector('.nav-btn[data-tab="teacher"]').addEventListener("click", () => { if (!loaded) load(); });
 if (location.hash === "#teacher" || location.hash === "#professor") load();
