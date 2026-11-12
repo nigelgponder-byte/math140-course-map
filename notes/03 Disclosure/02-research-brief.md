@@ -21,7 +21,7 @@ Can a **hints-only** AI help students fix proofs **without** hurting their learn
 
 ## 2️⃣ Claim: "A good AI tutor can teach well."
 - 🔍 **We checked:** Kestin et al. (2025), *Scientific Reports*.
-- 📄 **The source says:** a teacher-built AI tutor gave **larger learning gains** than an active-learning class.
+- 📄 **The source says:** a purpose-built AI tutor gave **larger learning gains** than an active-learning class.
 - ⚠️ **Result:** **Supported, with a limit.** The study is about **physics**, not geometry. *(guess)*
 
 ## 3️⃣ Claim: "AI can check if a proof is correct."

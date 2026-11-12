@@ -65,9 +65,11 @@ Every student account and study tool interface must embed and display these 8 co
 ## 🛡️ Risk Mitigation & Evidence-Backed Validation
 
 ### Scientific Evidence Base
-- **Bastani et al. (PNAS 2025)**: Unrestricted generative AI harms long-term test performance by 17% through cognitive offloading. Constrained, hint-only tutoring preserves and accelerates problem-solving stamina.
-- **Kestin et al. (Scientific Reports 2025)**: Socratic question-and-hint AI tutoring achieves superior conceptual mastery compared to passive instruction.
-- **Petrov et al. (arXiv 2025)**: LLMs exhibit high failure rates and deceptive overconfidence on formal proofs, necessitating human verification and mandatory disclaimers.
+- **Bastani et al. (PNAS 2025)**: Nearly 1,000 high school math students. Unrestricted GPT-4 raised practice grades, but once access was removed those students scored 17% lower on exams than students who never had it; they had used it as a "crutch". A safeguarded tutor largely mitigated that harm.
+- **Kestin et al. (Scientific Reports 2025)**: In a randomized trial with 194 Harvard physics students, a purpose-built AI tutor following pedagogical best practices produced median learning gains more than double those of an in-class *active-learning* lesson, in less time.
+- **Petrov et al. (arXiv preprint 2025)**: Experts graded AI proofs on the 2025 USA Math Olympiad. The best model scored 25% and all others under 5%, yet the models presented their proofs confidently. This supports human verification and disclaimers.
+
+Checked against the original papers on Nov 12, 2026. See the [Research & Evidence Index](../02%20Research%20%26%20Evidence/Research%20%26%20Evidence%20Index.md).
 
 ### Empirical Boundary Invariants
 - `INV-01`: Input text must contain $\ge 2$ structured proof lines; otherwise reject with draft request.

@@ -52,5 +52,5 @@ cssclasses: [garden]
 |---|---|---|---|
 | Open AI helps learning | Lower test scores (−17%) | ❌ Contradicted | **Hints only** |
 | AI tutors help | Larger gains (physics) | ⚠️ Supported, limited | **1 question back**, test in geometry |
-| AI can check proofs | Under 5% on full proofs | ❌ Contradicted | **No AI grading** |
+| AI can check proofs | Best model 25%, all others under 5% (latest version) | ❌ Contradicted | **No AI grading** |
 | Exams have no computers | Syllabus says **open book** | ⚠️ Unclear | **Ask the professor** (Professor Interview Kit) |

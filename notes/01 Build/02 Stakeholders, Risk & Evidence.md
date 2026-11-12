@@ -55,7 +55,7 @@ cssclasses: [garden]
 - ❓ **We still wonder:** these were high school students in Turkey. Is it the same for SCAD art students?
 
 ### 2️⃣ 🌱 A good tutor helps.
-- **What they found:** college physics students learned **more** from a teacher-built AI tutor than from a normal class.
+- **What they found:** college physics students learned **more** from a purpose-built AI tutor than from a normal class.
 - 🗺️ **On our map:** the helper follows teaching rules. **1 problem at a time.** **1 question back.**
 - 📄 **Source:** Kestin et al., *Scientific Reports*, 2025. https://doi.org/10.1038/s41598-025-97652-6
 - ❓ **We still wonder:** physics is not geometry. *(guess)*
